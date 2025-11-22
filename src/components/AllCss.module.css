@@ -1308,3 +1308,7 @@ img:hover {
   letter-spacing: -2%;
   color: #000000;
 }
+.paraLink{
+  text-decoration-color: var(--primary-light);
+  color: var(--primary-light);
+}
