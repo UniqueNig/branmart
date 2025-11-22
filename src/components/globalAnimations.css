@@ -1,0 +1,71 @@
+.fadeInUp {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.fadeInUp.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animated-fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease-out;
+}
+
+.animated-fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-up {
+  opacity: 0;
+  transition: 0.6s ease-out;
+}
+
+.fade-up.visible {
+  opacity: 1;
+}
+
+/* Step Badge Animation - Bounce */
+.bounce {
+  animation: bounceIn 0.8s ease forwards;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ============================= */
+/*  BOOTSTRAP + CUSTOM ANIMATION */
+/* ============================= */
+
+/* bootstrap fade class override */
+.fade {
+  opacity: 0;
+  transition: opacity 0.6s ease-out;
+}
+
+/* custom upward motion */
+.animated-fade-up {
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+/* when element becomes visible */
+.fade.show {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
