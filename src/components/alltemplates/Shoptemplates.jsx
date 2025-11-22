@@ -4,6 +4,7 @@ import style from "../AllCss.module.css";
 import image9 from "../../assets/image 9.png";
 import image10 from "../../assets/image 10.png";
 import image12 from "../../assets/image 12.png";
+import { Link } from "react-router-dom";
 
 /**
  * Shoptemplates (Option C)
@@ -201,7 +202,7 @@ const Shoptemplates = () => {
       popularity: 34,
     },
     {
-            img: image12,
+      img: image12,
       name: "Flone",
       badge: "Free",
       category: "Online Stores",
@@ -249,7 +250,7 @@ const Shoptemplates = () => {
       popularity: 34,
     },
     {
-            img: image12,
+      img: image12,
       name: "Flone",
       badge: "Free",
       category: "Online Stores",
@@ -297,7 +298,7 @@ const Shoptemplates = () => {
       popularity: 34,
     },
     {
-            img: image12,
+      img: image12,
       name: "Flone",
       badge: "Free",
       category: "Online Stores",
@@ -470,12 +471,21 @@ const Shoptemplates = () => {
               <div className="form-check mb-3">
                 <input
                   id="price-free"
-                  className="form-check-input me-3" style={{ width: '20px', height: '20px', border: '1px solid #D5D7DA', borderRadius: '6px' }}
+                  className="form-check-input me-3"
+                  style={{
+                    width: "20px",
+                    height: "20px",
+                    border: "1px solid #D5D7DA",
+                    borderRadius: "6px",
+                  }}
                   type="checkbox"
                   checked={selectedPrices.includes("Free")}
                   onChange={() => togglePrice("Free")}
                 />
-                <label className={`${style.shopLabel} form-check-label`} htmlFor="price-free">
+                <label
+                  className={`${style.shopLabel} form-check-label`}
+                  htmlFor="price-free"
+                >
                   Free
                 </label>
               </div>
@@ -483,13 +493,21 @@ const Shoptemplates = () => {
               <div className="form-check mb-3">
                 <input
                   id="price-premium"
-                  className="form-check-input me-3" style={{ width: '20px', height: '20px', border: '1px solid #D5D7DA', borderRadius: '6px' }}
+                  className="form-check-input me-3"
+                  style={{
+                    width: "20px",
+                    height: "20px",
+                    border: "1px solid #D5D7DA",
+                    borderRadius: "6px",
+                  }}
                   type="checkbox"
-
                   checked={selectedPrices.includes("Premium")}
                   onChange={() => togglePrice("Premium")}
                 />
-                <label className={`${style.shopLabel} form-check-label`} htmlFor="price-premium">
+                <label
+                  className={`${style.shopLabel} form-check-label`}
+                  htmlFor="price-premium"
+                >
                   Premium
                 </label>
               </div>
@@ -503,12 +521,21 @@ const Shoptemplates = () => {
                 <div className="form-check mb-3" key={i}>
                   <input
                     id={`cat-${i}`}
-                    className="form-check-input me-3" style={{ width: '20px', height: '20px', border: '1px solid #D5D7DA', borderRadius: '6px' }}
+                    className="form-check-input me-3"
+                    style={{
+                      width: "20px",
+                      height: "20px",
+                      border: "1px solid #D5D7DA",
+                      borderRadius: "6px",
+                    }}
                     type="checkbox"
                     checked={selectedCategories.includes(cat)}
                     onChange={() => toggleCategory(cat)}
                   />
-                  <label className={`${style.shopLabel} form-check-label`} htmlFor={`cat-${i}`}>
+                  <label
+                    className={`${style.shopLabel} form-check-label`}
+                    htmlFor={`cat-${i}`}
+                  >
                     {cat}
                   </label>
                 </div>
@@ -517,7 +544,7 @@ const Shoptemplates = () => {
               {/* Quick actions */}
               <div className="mt-3 d-flex gap-2">
                 <button
-                  className={`${style['btn-primary-custom']} btn`}
+                  className={`${style["btn-primary-custom"]} btn`}
                   onClick={() => {
                     setSelectedCategories([]);
                     setCurrentPage(1);
@@ -526,7 +553,7 @@ const Shoptemplates = () => {
                   Clear
                 </button>
                 <button
-                  className={`${style['btn-outline-custom']} btn`}
+                  className={`${style["btn-outline-custom"]} btn`}
                   onClick={() => {
                     setSelectedCategories([...allCategories]);
                     setCurrentPage(1);
@@ -541,7 +568,9 @@ const Shoptemplates = () => {
           {/* RIGHT SIDE: GRID + SORT */}
           <div className="col-md-9">
             {/* SORT + COUNT */}
-            <div className={`${style.shopLabel} d-flex justify-content-between align-items-center mb-4 controls-row`}>
+            <div
+              className={`${style.shopLabel} d-flex justify-content-between align-items-center mb-4 controls-row`}
+            >
               <p className="mb-0 fw-semibold">
                 {totalItems === 0
                   ? "0 Templates"
@@ -595,9 +624,13 @@ const Shoptemplates = () => {
                           <button className={`btn ${style["btn-orange"]} mb-2`}>
                             Use template
                           </button>
-                          <a href="#" className={style["preview-link"]}>
+                          <Link
+                            className={style["preview-link"]}
+                            to={"/template-details"}
+                          >
+                            {" "}
                             Preview ↗
-                          </a>
+                          </Link>
                         </div>
 
                         {/* NAME + BADGE */}
@@ -617,7 +650,7 @@ const Shoptemplates = () => {
             <div className="d-flex justify-content-between align-items-center mt-5">
               {/* PREVIOUS */}
               <button
-                className={`${style['btn-primary-custom']} btn  d-flex align-items-center gap-2`}
+                className={`${style["btn-primary-custom"]} btn  d-flex align-items-center gap-2`}
                 onClick={handlePrevious}
                 disabled={currentPage === 1}
               >
@@ -651,7 +684,7 @@ const Shoptemplates = () => {
               {/* NEXT & LOAD MORE */}
               <div className="d-flex gap-2">
                 <button
-                  className={`${style['btn-primary-custom']} btn  d-flex align-items-center gap-2`}
+                  className={`${style["btn-primary-custom"]} btn  d-flex align-items-center gap-2`}
                   onClick={handleNext}
                   disabled={currentPage === totalPages}
                 >
@@ -660,7 +693,7 @@ const Shoptemplates = () => {
 
                 {/* Load more: advances to next page until last */}
                 <button
-                  className={`${style['btn-outline-custom']} btn `}
+                  className={`${style["btn-outline-custom"]} btn `}
                   onClick={handleLoadMore}
                   disabled={currentPage === totalPages}
                 >

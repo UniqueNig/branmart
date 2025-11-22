@@ -3,6 +3,7 @@ import style from "../AllCss.module.css";
 import image12 from "../../assets/image 12.png";
 import image9 from "../../assets/image 9.png";
 import image10 from "../../assets/image 10.png";
+import { Link } from "react-router-dom";
 
 const PopularTemplate = () => {
   return (
@@ -58,9 +59,13 @@ const PopularTemplate = () => {
                   <button className={`btn ${style["btn-orange"]} mb-2`}>
                     Use template
                   </button>
-                  <a href="#" className={`${style["preview-link"]}`}>
+                  <Link
+                    className={style["preview-link"]}
+                    to={"/template-details"}
+                  >
+                    {" "}
                     Preview ↗
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="mt-2 d-flex justify-content-between">
@@ -82,9 +87,13 @@ const PopularTemplate = () => {
                   <button className={`btn ${style["btn-orange"]} mb-2`}>
                     Use template
                   </button>
-                  <a href="#" className={`${style["preview-link"]}`}>
+                  <Link
+                    className={style["preview-link"]}
+                    to={"/template-details"}
+                  >
+                    {" "}
                     Preview ↗
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="mt-2 d-flex justify-content-between">
@@ -107,9 +116,13 @@ const PopularTemplate = () => {
                   <button className={`btn ${style["btn-orange"]} mb-2`}>
                     Use template
                   </button>
-                  <a href="#" className={`${style["preview-link"]}`}>
+                  <Link
+                    className={style["preview-link"]}
+                    to={"/template-details"}
+                  >
+                    {" "}
                     Preview ↗
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="mt-2 d-flex justify-content-between">
@@ -138,9 +151,13 @@ const PopularTemplate = () => {
                   <button className={`btn ${style["btn-orange"]} mb-2`}>
                     Use template
                   </button>
-                  <a href="#" className={`${style["preview-link"]}`}>
+                  <Link
+                    className={style["preview-link"]}
+                    to={"/template-details"}
+                  >
+                    {" "}
                     Preview ↗
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="mt-2 d-flex justify-content-between">
@@ -164,9 +181,13 @@ const PopularTemplate = () => {
                   <button className={`btn ${style["btn-orange"]} mb-2`}>
                     Use template
                   </button>
-                  <a href="#" className={`${style["preview-link"]}`}>
+                  <Link
+                    className={style["preview-link"]}
+                    to={"/template-details"}
+                  >
+                    {" "}
                     Preview ↗
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="mt-2 d-flex justify-content-between">
@@ -189,9 +210,13 @@ const PopularTemplate = () => {
                   <button className={`btn ${style["btn-orange"]} mb-2`}>
                     Use template
                   </button>
-                  <a href="#" className={`${style["preview-link"]}`}>
+                  <Link
+                    className={style["preview-link"]}
+                    to={"/template-details"}
+                  >
+                    {" "}
                     Preview ↗
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="mt-2 d-flex justify-content-between">
@@ -204,11 +229,13 @@ const PopularTemplate = () => {
 
           {/* <!-- View All Button --> */}
           <div className="text-center mt-5">
-            <button
-              className={`btn ${style["btn-orange"]} px-4 py-2 rounded-pill`}
-            >
-              View all templates →
-            </button>
+            <Link to={"/templates"}>
+              <button
+                className={`btn ${style["btn-orange"]} px-4 py-2 rounded-pill`}
+              >
+                View all templates →
+              </button>
+            </Link>
           </div>
         </div>
       </section>

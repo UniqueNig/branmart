@@ -61,9 +61,13 @@ const Templates = () => {
                 {/* <!-- Hover Overlay --> */}
                 <div className={`${style.overlay} d-flex flex-column justify-content-center align-items-center`}>
                   <button className={`btn ${style['btn-orange']} mb-2`}>Use template</button>
-                  <a href="#" className={`${style['preview-link']}`}>
+                  <Link
+                    className={style["preview-link"]}
+                    to={"/template-details"}
+                  >
+                    {" "}
                     Preview ↗
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="mt-2 d-flex justify-content-between">
@@ -83,9 +87,13 @@ const Templates = () => {
                 />
                 <div className={`${style.overlay} d-flex flex-column justify-content-center align-items-center`}>
                   <button className={`btn ${style['btn-orange']} mb-2`}>Use template</button>
-                  <a href="#" className={`${style['preview-link']}`}>
+                  <Link
+                    className={style["preview-link"]}
+                    to={"/template-details"}
+                  >
+                    {" "}
                     Preview ↗
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="mt-2 d-flex justify-content-between">
@@ -106,9 +114,13 @@ const Templates = () => {
                 />
                 <div className={`${style.overlay} d-flex flex-column justify-content-center align-items-center`}>
                   <button className={`btn ${style['btn-orange']} mb-2`}>Use template</button>
-                  <a href="#" className={`${style['preview-link']}`}>
+                  <Link
+                    className={style["preview-link"]}
+                    to={"/template-details"}
+                  >
+                    {" "}
                     Preview ↗
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="mt-2 d-flex justify-content-between">
@@ -135,9 +147,13 @@ const Templates = () => {
                 {/* <!-- Hover Overlay --> */}
                 <div className={`${style.overlay} d-flex flex-column justify-content-center align-items-center`}>
                   <button className={`btn ${style['btn-orange']} mb-2`}>Use template</button>
-                  <a href="#" className={`${style['preview-link']}`}>
+                  <Link
+                    className={style["preview-link"]}
+                    to={"/template-details"}
+                  >
+                    {" "}
                     Preview ↗
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="mt-2 d-flex justify-content-between">
@@ -159,9 +175,13 @@ const Templates = () => {
                 />
                 <div className={`${style.overlay} d-flex flex-column justify-content-center align-items-center`}>
                   <button className={`btn ${style['btn-orange']} mb-2`}>Use template</button>
-                  <a href="#" className={`${style['preview-link']}`}>
+                  <Link
+                    className={style["preview-link"]}
+                    to={"/template-details"}
+                  >
+                    {" "}
                     Preview ↗
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="mt-2 d-flex justify-content-between">
@@ -182,9 +202,13 @@ const Templates = () => {
                 />
                 <div className={`${style.overlay} d-flex flex-column justify-content-center align-items-center`}>
                   <button className={`btn ${style['btn-orange']} mb-2`}>Use template</button>
-                  <a href="#" className={`${style['preview-link']}`}>
+                  <Link
+                    className={style["preview-link"]}
+                    to={"/template-details"}
+                  >
+                    {" "}
                     Preview ↗
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="mt-2 d-flex justify-content-between">

@@ -71,9 +71,13 @@ const HundredTemplate = () => {
                   <button className={`btn ${style["btn-orange"]} mb-2`}>
                     Use template
                   </button>
-                  <a href="#" className={`${style["preview-link"]}`}>
+                  <Link
+                    className={style["preview-link"]}
+                    to={"/template-details"}
+                  >
+                    {" "}
                     Preview ↗
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="mt-2 d-flex justify-content-between">
@@ -95,9 +99,13 @@ const HundredTemplate = () => {
                   <button className={`btn ${style["btn-orange"]} mb-2`}>
                     Use template
                   </button>
-                  <a href="#" className={`${style["preview-link"]}`}>
+                  <Link
+                    className={style["preview-link"]}
+                    to={"/template-details"}
+                  >
+                    {" "}
                     Preview ↗
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="mt-2 d-flex justify-content-between">
@@ -120,9 +128,13 @@ const HundredTemplate = () => {
                   <button className={`btn ${style["btn-orange"]} mb-2`}>
                     Use template
                   </button>
-                  <a href="#" className={`${style["preview-link"]}`}>
+                  <Link
+                    className={style["preview-link"]}
+                    to={"/template-details"}
+                  >
+                    {" "}
                     Preview ↗
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="mt-2 d-flex justify-content-between">
@@ -146,9 +158,13 @@ const HundredTemplate = () => {
                   <button className={`btn ${style["btn-orange"]} mb-2`}>
                     Use template
                   </button>
-                  <a href="#" className={`${style["preview-link"]}`}>
+                  <Link
+                    className={style["preview-link"]}
+                    to={"/template-details"}
+                  >
+                    {" "}
                     Preview ↗
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="mt-2 d-flex justify-content-between">
@@ -177,9 +193,13 @@ const HundredTemplate = () => {
                   <button className={`btn ${style["btn-orange"]} mb-2`}>
                     Use template
                   </button>
-                  <a href="#" className={`${style["preview-link"]}`}>
+                  <Link
+                    className={style["preview-link"]}
+                    to={"/template-details"}
+                  >
+                    {" "}
                     Preview ↗
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="mt-2 d-flex justify-content-between">
@@ -203,9 +223,13 @@ const HundredTemplate = () => {
                   <button className={`btn ${style["btn-orange"]} mb-2`}>
                     Use template
                   </button>
-                  <a href="#" className={`${style["preview-link"]}`}>
+                  <Link
+                    className={style["preview-link"]}
+                    to={"/template-details"}
+                  >
+                    {" "}
                     Preview ↗
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="mt-2 d-flex justify-content-between">
@@ -228,9 +252,13 @@ const HundredTemplate = () => {
                   <button className={`btn ${style["btn-orange"]} mb-2`}>
                     Use template
                   </button>
-                  <a href="#" className={`${style["preview-link"]}`}>
+                  <Link
+                    className={style["preview-link"]}
+                    to={"/template-details"}
+                  >
+                    {" "}
                     Preview ↗
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="mt-2 d-flex justify-content-between">
@@ -250,9 +278,13 @@ const HundredTemplate = () => {
                   <button className={`btn ${style["btn-orange"]} mb-2`}>
                     Use template
                   </button>
-                  <a href="#" className={`${style["preview-link"]}`}>
+                  <Link
+                    className={style["preview-link"]}
+                    to={"/template-details"}
+                  >
+                    {" "}
                     Preview ↗
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="mt-2 d-flex justify-content-between">
@@ -278,9 +310,13 @@ const HundredTemplate = () => {
                   <button className={`btn ${style["btn-orange"]} mb-2`}>
                     Use template
                   </button>
-                  <a href="#" className={`${style["preview-link"]}`}>
+                  <Link
+                    className={style["preview-link"]}
+                    to={"/template-details"}
+                  >
+                    {" "}
                     Preview ↗
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="mt-2 d-flex justify-content-between">
@@ -302,9 +338,13 @@ const HundredTemplate = () => {
                   <button className={`btn ${style["btn-orange"]} mb-2`}>
                     Use template
                   </button>
-                  <a href="#" className={`${style["preview-link"]}`}>
+                  <Link
+                    className={style["preview-link"]}
+                    to={"/template-details"}
+                  >
+                    {" "}
                     Preview ↗
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="mt-2 d-flex justify-content-between">
@@ -327,9 +367,13 @@ const HundredTemplate = () => {
                   <button className={`btn ${style["btn-orange"]} mb-2`}>
                     Use template
                   </button>
-                  <a href="#" className={`${style["preview-link"]}`}>
+                  <Link
+                    className={style["preview-link"]}
+                    to={"/template-details"}
+                  >
+                    {" "}
                     Preview ↗
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="mt-2 d-flex justify-content-between">
@@ -353,9 +397,13 @@ const HundredTemplate = () => {
                   <button className={`btn ${style["btn-orange"]} mb-2`}>
                     Use template
                   </button>
-                  <a href="#" className={`${style["preview-link"]}`}>
+                  <Link
+                    className={style["preview-link"]}
+                    to={"/template-details"}
+                  >
+                    {" "}
                     Preview ↗
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="mt-2 d-flex justify-content-between">
@@ -384,9 +432,13 @@ const HundredTemplate = () => {
                   <button className={`btn ${style["btn-orange"]} mb-2`}>
                     Use template
                   </button>
-                  <a href="#" className={`${style["preview-link"]}`}>
+                  <Link
+                    className={style["preview-link"]}
+                    to={"/template-details"}
+                  >
+                    {" "}
                     Preview ↗
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="mt-2 d-flex justify-content-between">
@@ -410,9 +462,13 @@ const HundredTemplate = () => {
                   <button className={`btn ${style["btn-orange"]} mb-2`}>
                     Use template
                   </button>
-                  <a href="#" className={`${style["preview-link"]}`}>
+                  <Link
+                    className={style["preview-link"]}
+                    to={"/template-details"}
+                  >
+                    {" "}
                     Preview ↗
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="mt-2 d-flex justify-content-between">
@@ -435,9 +491,13 @@ const HundredTemplate = () => {
                   <button className={`btn ${style["btn-orange"]} mb-2`}>
                     Use template
                   </button>
-                  <a href="#" className={`${style["preview-link"]}`}>
+                  <Link
+                    className={style["preview-link"]}
+                    to={"/template-details"}
+                  >
+                    {" "}
                     Preview ↗
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="mt-2 d-flex justify-content-between">
@@ -457,9 +517,13 @@ const HundredTemplate = () => {
                   <button className={`btn ${style["btn-orange"]} mb-2`}>
                     Use template
                   </button>
-                  <a href="#" className={`${style["preview-link"]}`}>
+                  <Link
+                    className={style["preview-link"]}
+                    to={"/template-details"}
+                  >
+                    {" "}
                     Preview ↗
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="mt-2 d-flex justify-content-between">

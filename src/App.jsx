@@ -8,6 +8,7 @@ import Features from "./pages/Features";
 import { initScrollAnimations } from "./utils/AllJS";
 import Templates from "./pages/Templates";
 import AllTemplates from "./pages/AllTemplates";
+import TemplateDetails from "./pages/TemplateDetails";
 // import './App.css'
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path="/features" element={<Features />} />
         <Route path="/template" element={<Templates/>}/>
         <Route path="/templates" element={<AllTemplates/>}/>
+        <Route path="/template-details" element={<TemplateDetails/>}/>
       </Routes>
     </>
   );
