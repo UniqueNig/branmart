@@ -252,6 +252,14 @@
   letter-spacing: -2%;
   font-weight: 400;
 }
+.defaultPara1 {
+  color: #414651;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: -2%;
+  font-weight: 400;
+}
 
 .buildToRunPara {
   font-family: "Bricolage Grotesque", sans-serif;
@@ -1308,7 +1316,34 @@ img:hover {
   letter-spacing: -2%;
   color: #000000;
 }
-.paraLink{
+.paraLink {
   text-decoration-color: var(--primary-light);
   color: var(--primary-light);
+}
+
+.reviewText {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 44px;
+  font-style: normal;
+  letter-spacing: -3%;
+  color: #000;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1); /* Makes arrow dark */
+}
+
+.reviewerName {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  font-style: normal;
+  letter-spacing: -2%;
+  color: #000000;
 }
