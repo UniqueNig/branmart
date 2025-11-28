@@ -1,19 +1,18 @@
 import React from "react";
 import style from "../AllCss.module.css";
 
-const GetStarted = () => {
+const StartFree = () => {
   return (
     <>
       <section class={`${style["hero-section"]} py-5`}>
         <div class="container text-center">
           <h1 class={`${style.buildToRun} mb-3`}>
-            START WITH A TEMPLATE <br />
-            AND GO LIVE TODAY
+            START FREE AND BUILD <br />
+            YOUR STORE TODAY
           </h1>
 
           <p class={`${style.buildToRunPara} mb-4`}>
-            Pick a design, make it yours, and launch your business <br />{" "}
-            website in minutes.
+            No credit card required. Create your online store in <br /> minutes.
           </p>
 
           <div class="d-flex justify-content-center gap-3 flex-wrap mt-4">
@@ -21,7 +20,7 @@ const GetStarted = () => {
               href="#"
               className={`btn ${style["btn-primary-custom"]} px-4 py-2`}
             >
-              Get Started Free
+              Start free
             </a>
           </div>
         </div>
@@ -30,4 +29,4 @@ const GetStarted = () => {
   );
 };
 
-export default GetStarted;
+export default StartFree;

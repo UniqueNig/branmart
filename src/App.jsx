@@ -9,6 +9,8 @@ import { initScrollAnimations } from "./utils/AllJS";
 import Templates from "./pages/Templates";
 import AllTemplates from "./pages/AllTemplates";
 import TemplateDetails from "./pages/TemplateDetails";
+import Pricing from "./pages/Pricing";
+import AboutUs from "./pages/AboutUs";
 // import './App.css'
 
 function App() {
@@ -26,6 +28,8 @@ function App() {
         <Route path="/template" element={<Templates/>}/>
         <Route path="/templates" element={<AllTemplates/>}/>
         <Route path="/template-details" element={<TemplateDetails/>}/>
+        <Route path="/pricing" element={<Pricing/>}/>
+        <Route path="/about-us" element={<AboutUs/>}/>
       </Routes>
     </>
   );

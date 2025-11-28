@@ -11,7 +11,7 @@ import vect3 from '../assets/Vector (3).png'
 const Trusted = () => {
   return (
     <>
-        <section className="py-5 border-top border-bottom">
+        <section className="py-5 ">
       <div className="container text-center">
      
         <h5 className={`fw-bold mb-2 ${style.trusted}`}>TRUSTED BY</h5>

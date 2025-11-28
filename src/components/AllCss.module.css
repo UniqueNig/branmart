@@ -45,11 +45,16 @@
 
 .navbar {
   border: #f5f5f5 1px solid;
-  background-color: white;
+  background-color: white !important;
   height: 80px;
   position: sticky !important;
   top: 0;
   z-index: 1030;
+}
+
+/* Also force the dropdown background on mobile */
+.navbar .dropdown-menu {
+  background: #ffffff !important;
 }
 
 .nav-item .nav-link {
@@ -75,6 +80,72 @@
 .nav-link::after {
   color: var(--primary-color);
 }
+
+.nav-link:hover{
+  color: var(--primary-color);
+
+}
+
+.megaMenu {
+  width: 750px;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.megaTitle {
+  color: #CC3602; /* match screenshot orange */
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -2%;
+  background-color: transparent;
+}
+
+.megaText {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -2%;
+  background-color: transparent;
+  color: #667085;
+}
+
+.megaIcon {
+  font-size: 20px;
+  color: #d44500;
+}
+
+.megaLink {
+  color: #CC3602;
+  text-decoration: none;
+    font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -2%;
+  background-color: transparent;
+}
+
+.megaBold{
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -2%;
+  background-color: transparent;
+  color: #181D27;
+}
+
+.megaLink:hover {
+  text-decoration: underline;
+}
+
 
 .loginBtn {
   font-family: "Bricolage Grotesque", sans-serif;
@@ -1346,4 +1417,554 @@ img:hover {
   font-style: normal;
   letter-spacing: -2%;
   color: #000000;
+}
+
+/* ----------- TOGGLE ----------- */
+.toggleWrapper input {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.toggleLabel {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  font-style: normal;
+  letter-spacing: -2%;
+  color: #000000;
+}
+
+.saveTag {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  font-style: normal;
+  letter-spacing: -2%;
+  color: #ff4f00;
+}
+
+/* ----------- CARDS ----------- */
+.cardBox {
+  background: #ffffff;
+  border: 1px solid #eee;
+}
+
+.cardBox h5 {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+  font-style: normal;
+  letter-spacing: -2%;
+  text-align: justify;
+}
+
+.cardBox p {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  font-style: normal;
+  letter-spacing: -2%;
+  color: #717680;
+  text-align: justify;
+}
+
+.cardBoxActive {
+  background: #1c1110;
+  color: #fff;
+  border-radius: 20px;
+}
+
+.cardBoxActive h5 {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+  font-style: normal;
+  letter-spacing: -2%;
+  text-align: justify;
+}
+.cardBoxActive p {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+  font-style: normal;
+  letter-spacing: -2%;
+  color: #717680;
+  text-align: justify;
+}
+
+.price {
+  font-family: "Agdasima", sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 60px;
+  letter-spacing: 0%;
+  color: #000;
+}
+
+.priceLight {
+  font-family: "Agdasima", sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 60px;
+  letter-spacing: 0%;
+  color: #fff;
+}
+
+/* ----------- BUTTONS ----------- */
+.outlineBtn {
+  background: transparent;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  font-style: normal;
+  letter-spacing: -2%;
+}
+
+.filledBtn {
+  background: #ffecd3;
+  border: none;
+  border-radius: 50px;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  font-style: normal;
+  letter-spacing: -2%;
+  color: #a12b0b;
+}
+
+.plans {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  font-style: normal;
+  letter-spacing: -2%;
+  color: #535862;
+}
+.featurePlan {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  font-style: normal;
+  letter-spacing: -2%;
+  color: #414651;
+}
+
+/* LEFT COLUMN TITLES */
+.featureTitle {
+  font-weight: 500;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 18px;
+  line-height: 28px;
+  font-style: normal;
+  letter-spacing: -2%;
+  color: #000000;
+}
+
+.featureItem {
+  font-weight: 500;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 16px;
+  line-height: 24px;
+  font-style: normal;
+  letter-spacing: -2%;
+  color: #414651;
+  margin-bottom: 0;
+}
+
+/* PLAN TITLES */
+.planTitle {
+  font-weight: 500;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 18px;
+  line-height: 28px;
+  font-style: normal;
+  letter-spacing: -2%;
+  color: #000000;
+}
+
+/* PLAN VALUES */
+.planValue {
+  font-weight: 500;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 16px;
+  line-height: 24px;
+  font-style: normal;
+  letter-spacing: -2%;
+  color: #414651;
+  margin-bottom: 0;
+}
+
+/* MIDDLE COLUMN HIGHLIGHT */
+.highlightCol {
+  background-color: #fff3e7;
+  border-radius: 20px;
+}
+
+/* BUTTON */
+.compareBtn {
+  border: 1px solid #e9eaeb;
+  color: #a12b0b;
+  padding: 10px 18px 10px 18px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 16px;
+  line-height: 24px;
+  font-style: normal;
+  letter-spacing: -2%;
+}
+
+.compareBtn:hover {
+  border: 1px solid #e9eaeb;
+  color: var(--primary-light);
+}
+
+/* Parent FAQ box */
+.faqBox {
+  background: #ffffff;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid #f0f0f0;
+}
+
+.faqBox:hover {
+  transform: translateY(-2px);
+}
+
+/* Question text */
+.faqQuestion {
+  font-weight: 500;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 18px;
+  line-height: 28px;
+  font-style: normal;
+  letter-spacing: -2%;
+  margin: 0;
+}
+
+/* Answer text */
+.faqAnswer {
+  font-weight: 400;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 16px;
+  line-height: 24px;
+  font-style: normal;
+  letter-spacing: -2%;
+  color: #717680;
+}
+
+/* Icons (plus / minus) */
+.plus,
+.minus {
+  font-size: 22px;
+  font-weight: 500;
+  color: #181d27;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+
+.plus::before {
+  content: "+";
+  color: #181d27;
+}
+
+.minus::before {
+  content: "–";
+  color: #181d27;
+}
+
+/* For headings & sub texts (your theme classes) */
+.defaultHeading {
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.defaultPara {
+  font-size: 16px;
+  color: #535862;
+}
+
+/* Background */
+.heroSection1 {
+  background: #fff4e9; /* match your screenshot */
+}
+
+/* Heading */
+.heroHeading1 {
+  font-family: "Agdasima", sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 60px;
+  letter-spacing: 0%;
+  color: #241717;
+}
+
+/* Subtext */
+.heroSubtext1 {
+  font-weight: 400;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 16px;
+  line-height: 24px;
+  font-style: normal;
+  letter-spacing: -2%;
+  color: #535862;
+}
+
+/* Image wrapper for rounded corners */
+.heroImageWrapper1 img {
+  border-radius: 20px;
+}
+.journeyHeading {
+  font-family: "Agdasima", sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 48px;
+  letter-spacing: 0%;
+  color: #241717;
+}
+.journeypara {
+  font-weight: 500;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 24px;
+  line-height: 32px;
+  font-style: normal;
+  letter-spacing: -2%;
+  color: #535862;
+}
+
+/* Heading */
+.purposeHeading {
+  font-family: "Agdasima", sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 36px;
+  letter-spacing: 0%;
+  color: #461004; /* matches the dark brown heading */
+}
+
+/* Subtitle */
+.purposeSubtext {
+  font-weight: 400;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 16px;
+  line-height: 24px;
+  font-style: normal;
+  letter-spacing: -2%;
+  color: #414651;
+}
+
+/* Mission/Vision cards */
+.infoCard {
+  border: 1px solid #e7e7e7;
+  background: #ffffff;
+  border-radius: 16px;
+  transition: all 0.2s ease;
+}
+.infoCard:hover {
+  transform: translateY(-3px);
+}
+
+/* Card text */
+.cardText {
+  font-weight: 400;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 16px;
+  line-height: 24px;
+  font-style: normal;
+  letter-spacing: -2%;
+  color: #535862;
+}
+
+/* Image wrapper to match rounded corners */
+.imageWrapper img {
+  border-radius: 24px;
+}
+
+.cardHeading {
+  font-weight: 600;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 16px;
+  line-height: 24px;
+  font-style: normal;
+  letter-spacing: -2%;
+  color: #000;
+}
+
+/* Section background */
+.offerSection {
+  background: #241717;
+  color: #fff;
+}
+
+/* Heading */
+.offerHeading {
+  font-family: "Agdasima", sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 36px;
+  letter-spacing: 0%;
+  color: #ffffff;
+}
+
+/* Subtitle */
+.offerSubtext {
+  color: #e9eaeb;
+  font-weight: 400;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 16px;
+  line-height: 24px;
+  font-style: normal;
+  letter-spacing: -2%;
+}
+
+/* Cards */
+.offerCard {
+  background: #2e2121;
+  border-radius: 16px;
+  transition: 0.3s ease;
+}
+
+.offerCard:hover {
+  transform: translateY(-4px);
+}
+
+/* Card text */
+.cardText1 {
+  color: #f5f5f5;
+  font-weight: 400;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 16px;
+  line-height: 24px;
+  font-style: normal;
+  letter-spacing: -2%;
+}
+
+.cardTextHeading {
+  color: #ffffff;
+  font-weight: 500;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 18px;
+  line-height: 28px;
+  font-style: normal;
+  letter-spacing: -2%;
+}
+
+/* Icon */
+.icon1 {
+  font-size: 26px;
+  color: #ff4f00; /* Orange accent */
+}
+
+.trustedWhite p,
+.trustedWhite h1,
+.trustedWhite h2,
+.trustedWhite h3,
+.trustedWhite img,
+.trustedWhite span {
+  color: white !important;
+}
+
+.standSection {
+  /* background, spacing, etc. (optional) */
+}
+
+.standHeading {
+  font-family: "Agdasima", sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 36px;
+  letter-spacing: 0%;
+  color: #461004; /* matches the dark brown heading */
+}
+
+.standSubtext {
+  font-weight: 400;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 16px;
+  line-height: 24px;
+  font-style: normal;
+  letter-spacing: -2%;
+  color: #414651;
+}
+
+.standCard {
+  border: 1px solid #e5e5e5;
+  background: #fff;
+  transition: 0.3s ease;
+}
+.standCard:hover {
+  transform: translateY(-4px);
+}
+
+.standNumber {
+  font-weight: 500;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 24px;
+  line-height: 32px;
+  font-style: normal;
+  letter-spacing: -2%;
+  color: #a4a7ae;
+}
+
+.standText {
+  font-weight: 400;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 16px;
+  line-height: 24px;
+  font-style: normal;
+  letter-spacing: -2%;
+  color: #535862;
+}
+.standSub{
+  font-weight: 500;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 20px;
+  line-height: 30px;
+  font-style: normal;
+  letter-spacing: -2%;
+  color: #000;
 }
