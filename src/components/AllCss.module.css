@@ -45,7 +45,7 @@
 
 .navbar {
   border: #f5f5f5 1px solid;
-  background-color: white !important;
+  background: white !important;
   height: 80px;
   position: sticky !important;
   top: 0;
@@ -81,9 +81,8 @@
   color: var(--primary-color);
 }
 
-.nav-link:hover{
+.nav-link:hover {
   color: var(--primary-color);
-
 }
 
 .megaMenu {
@@ -93,7 +92,7 @@
 }
 
 .megaTitle {
-  color: #CC3602; /* match screenshot orange */
+  color: #cc3602; /* match screenshot orange */
   font-family: "Bricolage Grotesque", sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
@@ -120,18 +119,8 @@
 }
 
 .megaLink {
-  color: #CC3602;
+  color: #cc3602;
   text-decoration: none;
-    font-family: "Bricolage Grotesque", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: -2%;
-  background-color: transparent;
-}
-
-.megaBold{
   font-family: "Bricolage Grotesque", sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
@@ -139,13 +128,22 @@
   line-height: 20px;
   letter-spacing: -2%;
   background-color: transparent;
-  color: #181D27;
+}
+
+.megaBold {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -2%;
+  background-color: transparent;
+  color: #181d27;
 }
 
 .megaLink:hover {
   text-decoration: underline;
 }
-
 
 .loginBtn {
   font-family: "Bricolage Grotesque", sans-serif;
@@ -1958,7 +1956,7 @@ img:hover {
   letter-spacing: -2%;
   color: #535862;
 }
-.standSub{
+.standSub {
   font-weight: 500;
   font-family: "Bricolage Grotesque", sans-serif;
   font-optical-sizing: auto;
@@ -1968,3 +1966,5 @@ img:hover {
   letter-spacing: -2%;
   color: #000;
 }
+
+

@@ -1,0 +1,183 @@
+/* WRAPPER */
+.signupWrapper {
+  background-image: url("../../../assets/signuphero.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh; /* Change from fixed height */
+}
+
+.leftOverlay {
+  height: 100%;
+  width: 100%;
+  padding: 40px;
+  position: relative;
+}
+
+/* .leftLogo {
+  width: 150px;
+  margin-bottom: 100px;
+} */
+
+.leftTextBox {
+  position: absolute;
+  bottom: 60px;
+  left: 40px;
+  color: #fff;
+  max-width: 600px;
+}
+
+.leftHeading {
+  font-family: "Agdasima", sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 60px;
+  letter-spacing: 0%;
+  color: #fff;
+}
+
+.signuppara {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 38px;
+  letter-spacing: -2%;
+}
+
+.signuppara1 {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -2%;
+  color: #535862;
+}
+
+.formLabel {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #414651;
+  letter-spacing: -2%;
+}
+input::placeholder {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #414651;
+  letter-spacing: -2%;
+}
+input {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000;
+  letter-spacing: -2%;
+}
+
+.formSelect{
+    font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #414651;
+  letter-spacing: -2%;
+}
+
+.leftSubtext {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: -2%;
+}
+
+/* RIGHT SIDE FORM CARD */
+.formCard {
+  width: 100%;
+  max-width: 650px;
+  background: #fff;
+  border-radius: 20px;
+}
+
+/* .formLogo {
+  width: 150px;
+  margin-bottom: 10px;
+} */
+
+.loginLink {
+  color: #a12b0b;
+  font-weight: 600;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -2%;
+}
+
+/* BUTTONS */
+.createBtn {
+  background: #D5D7DA;
+  color: #fff;
+  font-weight: 600;
+  /* height: 45px; */
+  border-radius: 100px;
+    font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -2%;
+  padding: 12px 20px 12px 20px;
+}
+.createBtn:hover{
+background: #D5D7DA;
+}
+
+.socialBtn {
+  background: #fff;
+  border: 1px solid #ccc;
+  color: #414651;
+  /* height: 45px; */
+  border-radius: 12px;
+  font-weight: 500;
+      font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -2%;
+}
+
+.socialIcon {
+  margin-right: 10px;
+}
+
+/* LEGAL */
+.legalLink {
+  color: #a12b0b;
+  font-weight: 600;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -2%;
+}
+
+.feedback{
+  color: #F04438;
+    font-weight: 400;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -2%;
+}

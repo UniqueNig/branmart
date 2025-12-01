@@ -11,6 +11,7 @@ import AllTemplates from "./pages/AllTemplates";
 import TemplateDetails from "./pages/TemplateDetails";
 import Pricing from "./pages/Pricing";
 import AboutUs from "./pages/AboutUs";
+import SignUp from "./pages/SignUp";
 // import './App.css'
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Route path="/template-details" element={<TemplateDetails/>}/>
         <Route path="/pricing" element={<Pricing/>}/>
         <Route path="/about-us" element={<AboutUs/>}/>
+        <Route path="/sign-up" element={<SignUp/>}/>
       </Routes>
     </>
   );
