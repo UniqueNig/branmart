@@ -63,6 +63,10 @@
   line-height: 20px;
   color: #414651;
   letter-spacing: -2%;
+ 
+}
+.link{
+     text-decoration: none;
 }
 input::placeholder {
   font-family: "Bricolage Grotesque", sans-serif;

@@ -4,9 +4,10 @@ import logo from "../../../assets/Vector.png"; // adjust path if needed
 import Logotype from "../../../assets/Logotype.png";
 import { useFormik } from "formik";
 import * as yup from "yup";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SigninMain = () => {
+  let navigate = useNavigate();
   let signin = useFormik({
     initialValues: {
       email: "",
@@ -15,6 +16,7 @@ const SigninMain = () => {
 
     onSubmit: (values) => {
       console.log(values);
+      navigate("");
     },
     validationSchema: yup.object({
       email: yup
@@ -138,24 +140,27 @@ const SigninMain = () => {
                   </div>
 
                   <div className="col-md-6 ">
-                    <p className={style.formLabel}>Forgot password?</p>
+                    <Link to={"/forgot-password"} className={style.link}>
+                      {" "}
+                      <p className={style.formLabel}>Forgot password?</p>
+                    </Link>
                   </div>
                 </div>
 
                 {/* Social Buttons */}
                 <button className={`btn w-100 mb-2 ${style.socialBtn}`}>
                   <i className="bi bi-google " style={{ color: "#EA4335" }}></i>{" "}
-                  Sign up with Google
+                  Sign in with Google
                 </button>
 
                 <button className={`btn w-100 mb-2 ${style.socialBtn}`}>
                   <i className="bi bi-apple " style={{ color: "black" }}></i>{" "}
-                  Sign up with Apple
+                  Sign in with Apple
                 </button>
 
                 <button className={`btn w-100 mb-2 ${style.socialBtn}`}>
                   <i className="bi bi-facebook " style={{ color: "blue" }}></i>{" "}
-                  Sign up with Facebook
+                  Sign in with Facebook
                 </button>
 
                 <p className={`text-center mt-2 ${style.signuppara1}`}>
