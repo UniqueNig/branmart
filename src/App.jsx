@@ -12,6 +12,11 @@ import TemplateDetails from "./pages/TemplateDetails";
 import Pricing from "./pages/Pricing";
 import AboutUs from "./pages/AboutUs";
 import SignUp from "./pages/SignUp";
+import VerifyEmail from "./pages/VerifyEmail";
+import SignIn from "./pages/SignIn";
+import ForgotPassword from "./pages/ForgotPassword";
+import VerifyForgotPassword from "./pages/VerifyForgotPassword";
+import ResetPassword from "./pages/ResetPassword";
 // import './App.css'
 
 function App() {
@@ -32,6 +37,12 @@ function App() {
         <Route path="/pricing" element={<Pricing/>}/>
         <Route path="/about-us" element={<AboutUs/>}/>
         <Route path="/sign-up" element={<SignUp/>}/>
+        <Route path="/sign-up/verify-email" element={<VerifyEmail/>}/>
+        <Route path="/sign-in" element={<SignIn/>}/>
+        <Route path="/forgot-password" element={<ForgotPassword/>}/>
+        <Route path="/forgot-password/verify" element={<VerifyForgotPassword/>}/>
+        <Route path="/reset-password" element={<ResetPassword/>}/>
+        <Route path="/reset-password/success" element={<ResetPassword/>}/>
       </Routes>
     </>
   );

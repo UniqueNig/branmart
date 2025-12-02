@@ -139,8 +139,22 @@ input {
   letter-spacing: -2%;
   padding: 12px 20px 12px 20px;
 }
+
+.loginBtn{
+      background: #a12b0b;
+  color: #fff;
+  font-weight: 600;
+  /* height: 45px; */
+  border-radius: 100px;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -2%;
+  padding: 12px 20px 12px 20px;
+}
 .createBtn:hover {
-  background: #d5d7da;
+  background: #a12b0b;
 }
 
 .socialBtn {
@@ -181,6 +195,7 @@ input {
   line-height: 20px;
   letter-spacing: -2%;
 }
+
 
 /* Email Icon Box */
 .emailIconBox {

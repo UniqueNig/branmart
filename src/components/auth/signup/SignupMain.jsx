@@ -4,8 +4,11 @@ import logo from "../../../assets/Vector.png"; // adjust path if needed
 import Logotype from "../../../assets/Logotype.png";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignupMain = () => {
+  const navigate = useNavigate();
+
   let signup = useFormik({
     initialValues: {
       firstname: "",
@@ -17,6 +20,8 @@ const SignupMain = () => {
     },
     onSubmit: (values) => {
       console.log(values);
+     navigate('/sign-up/verify-email')
+      
     },
     validationSchema: yup.object({
       firstname: yup
@@ -43,7 +48,7 @@ const SignupMain = () => {
     }),
   });
 
-  //  console.log(signup.values);
+   console.log(signup.values);
   return (
     <>
       <div className={`container-fluid ${style.signupWrapper}`}>
@@ -77,10 +82,10 @@ const SignupMain = () => {
                 Sign up
               </h2>
               <p className={`text-center ${style.signuppara1}`}>
-                Already have an account?{" "}
-                <a href="#" className={style.loginLink}>
+                Already have an account?{" "} 
+                <Link to={"/sign-in"} className={style.loginLink}>
                   Log in
-                </a>
+                </Link>
               </p>
 
               <form onSubmit={signup.handleSubmit}>
@@ -104,7 +109,9 @@ const SignupMain = () => {
                     />
 
                     {signup.touched.firstname && signup.errors.firstname && (
-                      <div className={`${style.feedback} invalid-feedback d-block`}>
+                      <div
+                        className={`${style.feedback} invalid-feedback d-block`}
+                      >
                         {signup.errors.firstname}
                       </div>
                     )}
@@ -128,7 +135,9 @@ const SignupMain = () => {
                     />
 
                     {signup.touched.lastname && signup.errors.lastname && (
-                      <div className={`${style.feedback} invalid-feedback d-block`}>
+                      <div
+                        className={`${style.feedback} invalid-feedback d-block`}
+                      >
                         {signup.errors.lastname}
                       </div>
                     )}
@@ -154,7 +163,9 @@ const SignupMain = () => {
                   />
 
                   {signup.touched.email && signup.errors.email && (
-                    <div className={`${style.feedback} invalid-feedback d-block`}>
+                    <div
+                      className={`${style.feedback} invalid-feedback d-block`}
+                    >
                       {signup.errors.email}
                     </div>
                   )}
@@ -180,13 +191,15 @@ const SignupMain = () => {
                     <option value="" disabled>
                       Select
                     </option>
-                    <option value="personal">Individual</option>
+                    <option value="individual">Individual</option>
                     <option value="business">Business</option>
                     <option value="agency">Agency</option>
                   </select>
 
                   {signup.touched.accounttype && signup.errors.accounttype && (
-                    <div className={`${style.feedback} invalid-feedback d-block`}>
+                    <div
+                      className={`${style.feedback} invalid-feedback d-block`}
+                    >
                       {signup.errors.accounttype}
                     </div>
                   )}
@@ -212,7 +225,9 @@ const SignupMain = () => {
                   />
 
                   {signup.touched.password && signup.errors.password && (
-                    <div className={`${style.feedback} invalid-feedback d-block`}>
+                    <div
+                      className={`${style.feedback} invalid-feedback d-block`}
+                    >
                       {signup.errors.password}
                     </div>
                   )}
@@ -240,7 +255,9 @@ const SignupMain = () => {
 
                   {signup.touched.confirmpassword &&
                     signup.errors.confirmpassword && (
-                      <div className={`${style.feedback} invalid-feedback d-block`}>
+                      <div
+                        className={`${style.feedback} invalid-feedback d-block`}
+                      >
                         {signup.errors.confirmpassword}
                       </div>
                     )}
