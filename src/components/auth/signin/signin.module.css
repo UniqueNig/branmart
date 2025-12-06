@@ -63,10 +63,9 @@
   line-height: 20px;
   color: #414651;
   letter-spacing: -2%;
- 
 }
-.link{
-     text-decoration: none;
+.link {
+  text-decoration: none;
 }
 input::placeholder {
   font-family: "Bricolage Grotesque", sans-serif;
@@ -144,8 +143,8 @@ input {
   padding: 12px 20px 12px 20px;
 }
 
-.loginBtn{
-      background: #a12b0b;
+.loginBtn {
+  background: #a12b0b;
   color: #fff;
   font-weight: 600;
   /* height: 45px; */
@@ -200,7 +199,6 @@ input {
   letter-spacing: -2%;
 }
 
-
 /* Email Icon Box */
 .emailIconBox {
   background: #fff6ec;
@@ -216,6 +214,37 @@ input {
 .emailIcon {
   font-size: 26px;
   color: #ff4f00; /* your orange */
+}
+
+.successIconBox {
+  background: #12b76a;
+  border: 10px solid #d1fadf;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  /* Continuous animation */
+  animation: pulseInOut 1.2s ease-in-out infinite;
+}
+
+@keyframes pulseInOut {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.12);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.successIcon {
+  font-size: 26px;
+  color: #ffff;
 }
 
 /* OTP Inputs */
@@ -240,7 +269,7 @@ input {
 
 /* Verify Button */
 .verifyBtn {
-  background: #CC3602;
+  background: #cc3602;
   color: #fff;
   font-weight: 600;
   /* height: 45px; */
@@ -253,6 +282,6 @@ input {
   padding: 12px 20px 12px 20px;
 }
 
-.verifyBtn:hover{
-  background-color: #CC3602;
+.verifyBtn:hover {
+  background-color: #cc3602;
 }

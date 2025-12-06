@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./AllCss.module.css";
-import footerLogo from '../assets/Vector.png'
+import footerLogo from "../assets/Vector.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -22,21 +23,21 @@ const Footer = () => {
           <div className={`${style["footer-links"]}  col-md-7`}>
             <div className={`${style["footer-column"]}`}>
               <h4>Product</h4>
-              <a href="#">Features</a>
-              <a href="#">Templates</a>
-              <a href="#">Pricing</a>
+              <Link to={"/features"}>Features</Link>
+              <Link to={"/templates"}>Templates</Link>
+              <Link to={"/pricing"}>Pricing</Link>
             </div>
 
             <div className={`${style["footer-column"]}`}>
               <h4>Company</h4>
-              <a href="#">About</a>
+              <Link to={"/about-us"}>About</Link>
               <a href="#">Careers</a>
-              <a href="#">Contact</a>
+              <Link to={"/contact-us"}>Contact</Link>
             </div>
 
             <div className={`${style["footer-column"]}`}>
               <h4>Resources</h4>
-              <a href="#">Blog</a>
+              <Link to={"/blog"}>Blog</Link>
               <a href="#">Tutorials</a>
               <a href="#">Help centre</a>
               <a href="#">FAQs</a>

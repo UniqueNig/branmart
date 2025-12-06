@@ -17,6 +17,9 @@ import SignIn from "./pages/SignIn";
 import ForgotPassword from "./pages/ForgotPassword";
 import VerifyForgotPassword from "./pages/VerifyForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
+import ResetPasswordSuccess from "./pages/ResetPasswordSuccess";
+import ContactUs from "./pages/ContactUs";
+import Blog from "./pages/Blog";
 // import './App.css'
 
 function App() {
@@ -29,6 +32,7 @@ function App() {
   return (
     <>
       <Routes>
+        {/* Main pages */}
         <Route path="/" element={<Homepage />} />
         <Route path="/features" element={<Features />} />
         <Route path="/template" element={<Templates/>}/>
@@ -36,13 +40,17 @@ function App() {
         <Route path="/template-details" element={<TemplateDetails/>}/>
         <Route path="/pricing" element={<Pricing/>}/>
         <Route path="/about-us" element={<AboutUs/>}/>
+        <Route path="/contact-us" element={<ContactUs/>}/>
+        <Route path="/blog" element={<Blog/>}/>
+
+        {/* Auth pages */}
         <Route path="/sign-up" element={<SignUp/>}/>
         <Route path="/sign-up/verify-email" element={<VerifyEmail/>}/>
         <Route path="/sign-in" element={<SignIn/>}/>
         <Route path="/forgot-password" element={<ForgotPassword/>}/>
         <Route path="/forgot-password/verify" element={<VerifyForgotPassword/>}/>
         <Route path="/reset-password" element={<ResetPassword/>}/>
-        <Route path="/reset-password/success" element={<ResetPassword/>}/>
+        <Route path="/reset-password/success" element={<ResetPasswordSuccess/>}/>
       </Routes>
     </>
   );

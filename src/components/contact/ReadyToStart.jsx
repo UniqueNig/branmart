@@ -1,20 +1,19 @@
 import React from "react";
-import style from "./AllCss.module.css";
+import style from "../AllCss.module.css";
 import { Link } from "react-router-dom";
-
-const ExploreTemplate = () => {
+const ReadyToStart = () => {
   return (
     <>
       <section class={`${style["hero-section"]} py-5`}>
         <div class="container text-center">
           <h1 class={`${style.buildToRun} mb-3`}>
-            START BUILDING YOUR <br />
-            WEBSITE TODAY
+            READY TO START YOUR <br />
+            WEBSITE?
           </h1>
 
           <p class={`${style.buildToRunPara} mb-4`}>
-            Create your store, customize your design, and start <br />
-            selling—all in one platform.
+            Build and launch your online business today with <br />
+            Branmart.
           </p>
 
           <div class="d-flex justify-content-center gap-3 flex-wrap mt-4">
@@ -39,4 +38,4 @@ const ExploreTemplate = () => {
   );
 };
 
-export default ExploreTemplate;
+export default ReadyToStart;

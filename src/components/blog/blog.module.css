@@ -1,0 +1,73 @@
+.topLabel {
+  color: #cc3602; /* Your brand orange */
+  font-weight: 600;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -2%;
+}
+
+.mainHeading {
+  font-size: 60px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 60px;
+  font-family: "Agdasima", sans-serif;
+  letter-spacing: 0%;
+  text-align: center;
+  margin-bottom: 12px;
+  color: #241717;
+}
+
+.subText {
+  color: #535862;
+  font-weight: 400;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: -3%;
+}
+
+/* Filter pills */
+.activeFilter {
+  background: #f97316;
+  color: #fff;
+  border: none;
+}
+
+.inactiveFilter {
+  background: #f2f2f2;
+  color: #333;
+  border: none;
+}
+
+/* Blog Card */
+.blogCard {
+  background: #fff;
+  border-radius: 20px;
+}
+
+/* Category tag */
+.categoryTag {
+  font-size: 0.75rem;
+  background: #fff3e6;
+  color: #f97316;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+/* Read more */
+.readMore {
+  color: #f97316;
+  font-weight: 500;
+}
+
+/* Load more button */
+.loadMoreBtn {
+  background: #f97316;
+  color: white;
+  border: none;
+}
+.loadMoreBtn:hover {
+  opacity: 0.8;
+}

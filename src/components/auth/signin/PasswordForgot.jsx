@@ -1,11 +1,12 @@
 import React from "react";
 import style from "./signin.module.css";
 import logo from "../../../assets/Vector.png"; // adjust path if needed
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as yup from "yup";
 
 const PasswordForgot = () => {
+  let navigate = useNavigate();
   let signin = useFormik({
     initialValues: {
       email: "",
@@ -13,6 +14,7 @@ const PasswordForgot = () => {
 
     onSubmit: (values) => {
       console.log(values);
+      navigate('/forgot-password/verify')
     },
     validationSchema: yup.object({
       email: yup
@@ -23,8 +25,8 @@ const PasswordForgot = () => {
   });
   return (
     <>
-      <div className=" d-flex justify-content-center align-items-center">
-        <div className={`p-4  p-md-5 ${style.formCard}`}>
+      <div className=" d-flex justify-content-center  align-items-center">
+        <div className={`p-4  p-md-5 shadow mt-5 ${style.formCard}`}>
           {/* Logo */}
           <div className="text-center mb-3">
             <img src={logo} alt="logo" className={style.formLogo} />

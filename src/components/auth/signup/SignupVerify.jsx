@@ -13,12 +13,18 @@ const SignupVerify = () => {
     },
 
     onSubmit: (values) => {
-      console.log(values);
+      console.log("OTP Submitted:", values.token);
       navigate("/sign-in");
     },
-    
   });
-  console.log(verify.values);
+  // console.log(verify.values);
+
+  // Collect OTP from 6 boxes
+  const handleOtpChange = (index, value) => {
+    let current = verify.values.token.split("");
+    current[index] = value;
+    verify.setFieldValue("token", current.join(""));
+  };
   return (
     <>
       <div className={`container-fluid ${style.signupWrapper}`}>
@@ -74,7 +80,7 @@ const SignupVerify = () => {
                       type="password"
                       name="token"
                       maxLength="1"
-                      onChange={verify.handleChange}
+                      onChange={(e) => handleOtpChange(i, e.target.value)}
                       onBlur={verify.handleBlur}
                       className={`form-control text-center ${style.otpInput}`}
                     />

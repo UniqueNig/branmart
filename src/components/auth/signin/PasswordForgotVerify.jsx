@@ -1,14 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./signin.module.css";
-import logo from "../../../assets/Vector.png"; // adjust path if needed
-import { Link } from "react-router-dom";
+import logo from "../../../assets/Vector.png";
+import { Link, useNavigate } from "react-router-dom";
+import { useFormik } from "formik";
 
 const PasswordForgotVerify = () => {
+  const navigate = useNavigate();
+
+  const verify = useFormik({
+    initialValues: {
+      token: "",
+    },
+
+    onSubmit: (values) => {
+      console.log("OTP Submitted:", values.token);
+      navigate("/reset-password");
+    },
+  });
+
+  // Collect OTP from 6 boxes
+  const handleOtpChange = (index, value) => {
+    let current = verify.values.token.split("");
+    current[index] = value;
+    verify.setFieldValue("token", current.join(""));
+  };
+
   return (
     <>
       {/* RIGHT SIDE FORM - UPDATED UI */}
-      <div className=" d-flex justify-content-center align-items-center">
-        <div className={`p-4 p-md-5 w-100 ${style.formCard}`}>
+      <div className="d-flex justify-content-center  align-items-center">
+        <div className={`p-4 p-md-5 w-100 shadow mt-5 ${style.formCard}`}>
+          
           {/* Logo */}
           <div className="text-center mb-4">
             <img src={logo} alt="logo" className={style.formLogo} />
@@ -32,35 +54,35 @@ const PasswordForgotVerify = () => {
             to reset your password.
           </p>
 
-          {/* OTP INPUTS */}
-          <div className="d-flex justify-content-center gap-2 mb-4">
-            {[1, 2, 3, 4, 5, 6].map((_, i) => (
-              <input
-                key={i}
-                type="password"
-                maxLength="1"
-                className={`form-control text-center ${style.otpInput}`}
-              />
-            ))}
-          </div>
+          <form onSubmit={verify.handleSubmit}>
+            {/* OTP INPUTS */}
+            <div className="d-flex justify-content-center gap-2 mb-4">
+              {[0, 1, 2, 3, 4, 5].map((i) => (
+                <input
+                  key={i}
+                  type="text"
+                  maxLength="1"
+                  className={`form-control text-center ${style.otpInput}`}
+                  onChange={(e) => handleOtpChange(i, e.target.value)}
+                />
+              ))}
+            </div>
 
-          {/* Resend */}
-          <p className={`${style.signuppara1} text-center mb-4`}>
-            Didn’t Receive OTP?{" "}
-            <span className={style.resendText}>Resend Code in 00:59</span>
-          </p>
+            {/* Resend */}
+            <p className={`${style.signuppara1} text-center mb-4`}>
+              Didn’t Receive OTP?{" "}
+              <span className={style.resendText}>Resend Code in 00:59</span>
+            </p>
 
-          {/* Verify Button */}
-          <button
-            type="button"
-            className={`btn w-100 ${style.verifyBtn}`}
-            disabled
-          >
-            Verify
-          </button>
+            {/* Verify Button */}
+            <button type="submit" className={`btn w-100 ${style.verifyBtn}`}>
+              Verify
+            </button>
+          </form>
 
-          <div className="text-center">
-            <Link to={"/sign-in"} className={` ${style.legalLink}`}>
+          {/* Back to login */}
+          <div className="text-center mt-3">
+            <Link to="/sign-in" className={style.legalLink}>
               Back to Log in
             </Link>
           </div>

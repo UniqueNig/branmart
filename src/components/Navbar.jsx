@@ -181,12 +181,13 @@ const Navbar = () => {
                           </div>
                         </div>
 
-                        <a
+                        <Link
                           className={`fw-bold d-inline-block mt-2 ${style.megaLink}`}
-                          href="#"
+                          to={"/blog"}
                         >
+                          {" "}
                           All blog posts →
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -203,12 +204,14 @@ const Navbar = () => {
               </ul>
 
               <div className="d-flex gap-3">
-                <button
-                  className={`btn btn-light ${style.loginBtn}`}
-                  type="submit"
-                >
-                  Login
-                </button>
+                <Link to={"/sign-in"}>
+                  <button
+                    className={`btn btn-light ${style.loginBtn}`}
+                    type="submit"
+                  >
+                    Login
+                  </button>
+                </Link>
                 <Link to={"/sign-up"}>
                   <button className={` ${style.registerBtn}`} type="submit">
                     Start for free

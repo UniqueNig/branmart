@@ -2,10 +2,11 @@ import { useFormik } from "formik";
 import React from "react";
 import style from "./signin.module.css";
 import logo from "../../../assets/Vector.png"; // adjust path if needed
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import * as yup from "yup";
 
 const NewPassword = () => {
+   let navigate =  useNavigate()
   let signin = useFormik({
     initialValues: {
       password: "",
@@ -14,6 +15,7 @@ const NewPassword = () => {
 
     onSubmit: (values) => {
       console.log(values);
+      navigate('/reset-password/success')
     },
     validationSchema: yup.object({
       password: yup
@@ -28,8 +30,8 @@ const NewPassword = () => {
   });
   return (
     <>
-      <div className=" d-flex justify-content-center align-items-center">
-        <div className={`p-4  p-md-5 ${style.formCard}`}>
+      <div className=" d-flex justify-content-center  align-items-center">
+        <div className={`p-4  p-md-5 shadow mt-5 ${style.formCard}`}>
           {/* Logo */}
           <div className="text-center mb-3">
             <img src={logo} alt="logo" className={style.formLogo} />
