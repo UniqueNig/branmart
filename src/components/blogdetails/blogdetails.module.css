@@ -1,0 +1,234 @@
+.relatedSection {
+  padding-top: 20px;
+}
+
+/* Card */
+.newsCard {
+  border-radius: 20px;
+  background: #fafafa;
+  padding: 16px;
+  border: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.RelatedNews {
+  font-weight: 600;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: -3%;
+  color: #181d27;
+}
+
+.newsCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Badge */
+.badge {
+  background: #fff6ed;
+  color: #c4320a;
+  padding: 4px 12px 4px 12px;
+  border-radius: 20px;
+  font-weight: 500;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -2%;
+}
+
+/* Date */
+.date {
+  color: #535862;
+  font-weight: 400;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -2%;
+}
+
+/* Title */
+.title {
+  color: #181d27;
+  font-weight: 600;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -3%;
+}
+
+/* Description */
+.description {
+  color: #535862;
+  font-weight: 400;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -2%;
+}
+
+/* Read more link */
+.readMore {
+  color: #a12b0b;
+  font-weight: 600;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -2%;
+  text-decoration: none;
+}
+
+.readMore:hover {
+  text-decoration: underline;
+}
+
+/* Button */
+.viewAllBtn {
+  background-color: #cc3602;
+  font-weight: 600;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -2%;
+  color: white;
+  border-radius: 100px;
+  border: #cc3602 1px solid;
+  padding: 10px 24px 10px 24px;
+  cursor: pointer;
+}
+
+.viewAllBtn:hover {
+  background-color: #cc3602;
+  border: #cc3602 1px solid;
+  opacity: 0.7;
+  color: white;
+}
+
+.titleBlog {
+  font-family: "Agdasima", sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 48px;
+  letter-spacing: 0%;
+  color: #241717;
+  text-transform: uppercase;
+}
+
+.topTags {
+  background-color: #ffecd3;
+  border-radius: 16px;
+  padding: 4px 12px 4px 4px;
+}
+
+.categoryTag {
+  padding: 6px 6px;
+  border-radius: 20px;
+  background: #ffffff;
+  color: #a12b0b;
+  font-weight: 500;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -2%;
+  border: #ffb56d 1px solid;
+}
+
+.readTime {
+  font-weight: 400;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -2%;
+  color: #a12b0b;
+  /* background: #f3f3f3; */
+  /* padding: 6px 14px; */
+  border-radius: 20px;
+}
+
+.authorName,
+.dateB {
+  color: #181d27;
+  font-weight: 500;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: -2%;
+}
+
+.Blogy {
+  font-weight: 600;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -2%;
+  color: #cc3602;
+}
+
+.iconBtn {
+  background: white;
+  border: 1px solid #d5d7da;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  color: #a4a7ae;
+}
+
+.iconBtn:hover {
+  color: #000;
+}
+.iconBtnC {
+  background: white;
+  border: 1px solid #d5d7da;
+  /* width: 38px; */
+  height: 38px;
+  padding: 10px 16px 10px 16px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center; /* vertical center */
+  justify-content: center; /* horizontal center */
+  gap: 8px; /* space between icon and text */
+}
+
+.iconBtnC i {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.iconBtnC span {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.copy {
+  font-weight: 600;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -2%;
+  color: #414651;
+}
+
+.textLink {
+  text-decoration: underline;
+}
+
+.quoteBox {
+  border-left: 4px solid #d35400;
+  background: #fff8f1;
+}
+
+.quoteAuthor {
+  color: #535862;
+  font-weight: 400;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -2%;
+}
+
+.blogContent {
+  max-width: 800px;
+}

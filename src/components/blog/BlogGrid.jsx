@@ -4,6 +4,7 @@ import blog1 from "../../assets/blog1.png";
 import blog2 from "../../assets/blog2.png";
 import blog3 from "../../assets/blog3.png";
 import blog4 from "../../assets/blog4.png";
+import { Link } from "react-router-dom";
 
 const BlogGrid = () => {
   const categories = [
@@ -203,15 +204,17 @@ const BlogGrid = () => {
 
                 <div className="d-flex justify-content-between mb-2">
                   <span className={style.categoryTag}>{blog.category}</span>
-                  <small className="text-muted">{blog.date}</small>
+                  <small className={style.catDate}>{blog.date}</small>
                 </div>
 
-                <h5 className="fw-bold">{blog.title}</h5>
-                <p className="text-muted mb-3">{blog.excerpt}</p>
+                <h5 className={style.blogTitle}>{blog.title}</h5>
+                <p className={`${style.catDate} mb-3`}>{blog.excerpt}</p>
 
-                <button className={`btn p-0 ${style.readMore}`}>
-                  Read more →
-                </button>
+                <Link to={"/blog-details"}>
+                  <button className={`btn p-0 text-start ${style.readMore}`}>
+                    Read more →
+                  </button>
+                </Link>
               </div>
             </div>
           ))}
@@ -219,7 +222,7 @@ const BlogGrid = () => {
 
         {/* Load More */}
         {visibleCount < filteredBlogs.length && (
-          <div className="text-center mt-4 mb-5">
+          <div className="text-center mt-5 mb-5">
             <button
               className={`btn px-4 py-2 rounded-pill ${style.loadMoreBtn}`}
               onClick={() => setVisibleCount(visibleCount + 2)}

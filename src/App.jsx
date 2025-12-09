@@ -20,11 +20,12 @@ import ResetPassword from "./pages/ResetPassword";
 import ResetPasswordSuccess from "./pages/ResetPasswordSuccess";
 import ContactUs from "./pages/ContactUs";
 import Blog from "./pages/Blog";
+import BlogDetails from "./pages/BlogDetails";
+import HelpCentre from "./pages/HelpCentre";
 // import './App.css'
 
 function App() {
-
-  const location = useLocation()
+  const location = useLocation();
   useEffect(() => {
     initScrollAnimations();
   }, [location.pathname]);
@@ -35,22 +36,30 @@ function App() {
         {/* Main pages */}
         <Route path="/" element={<Homepage />} />
         <Route path="/features" element={<Features />} />
-        <Route path="/template" element={<Templates/>}/>
-        <Route path="/templates" element={<AllTemplates/>}/>
-        <Route path="/template-details" element={<TemplateDetails/>}/>
-        <Route path="/pricing" element={<Pricing/>}/>
-        <Route path="/about-us" element={<AboutUs/>}/>
-        <Route path="/contact-us" element={<ContactUs/>}/>
-        <Route path="/blog" element={<Blog/>}/>
+        <Route path="/template" element={<Templates />} />
+        <Route path="/templates" element={<AllTemplates />} />
+        <Route path="/template-details" element={<TemplateDetails />} />
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog-details" element={<BlogDetails />} />
+        <Route path="/help-centre" element={<HelpCentre />} />
 
         {/* Auth pages */}
-        <Route path="/sign-up" element={<SignUp/>}/>
-        <Route path="/sign-up/verify-email" element={<VerifyEmail/>}/>
-        <Route path="/sign-in" element={<SignIn/>}/>
-        <Route path="/forgot-password" element={<ForgotPassword/>}/>
-        <Route path="/forgot-password/verify" element={<VerifyForgotPassword/>}/>
-        <Route path="/reset-password" element={<ResetPassword/>}/>
-        <Route path="/reset-password/success" element={<ResetPasswordSuccess/>}/>
+        <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/sign-up/verify-email" element={<VerifyEmail />} />
+        <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route
+          path="/forgot-password/verify"
+          element={<VerifyForgotPassword />}
+        />
+        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route
+          path="/reset-password/success"
+          element={<ResetPasswordSuccess />}
+        />
       </Routes>
     </>
   );

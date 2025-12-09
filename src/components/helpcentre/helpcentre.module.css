@@ -1,0 +1,117 @@
+.popularArticles {
+  margin-top: 4rem;
+}
+
+.title {
+  font-weight: 700;
+  letter-spacing: 0%;
+  font-family: "Agdasima", sans-serif;
+  font-size: 48px;
+  line-height: 48px;
+  color: #241717;
+}
+
+.subtitle {
+  color: #535862;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  letter-spacing: -2%;
+}
+
+.articleCard {
+  background-color: #241717;
+  height: 100%;
+  border-radius: 16px;
+  padding: 24px 32px 24px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.articleCard:hover {
+  transform: translateY(-5px);
+}
+
+.cardText {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 500;
+  letter-spacing: -3%;
+  margin-top: 12px;
+  color: white;
+}
+
+.icon {
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.iconWrapper {
+  width: 48px; /* or 100% if full-width */
+  height: 48px;
+  margin: 0 auto 12px;
+}
+
+.iconEx {
+  font-size: 21px;
+  color: #ff4f00;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.cardTitle{
+      font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+  letter-spacing: -3%;
+}
+
+.cardDescription {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  letter-spacing: -2%;
+  /* margin-top: 8px; */
+  color: #252B37;
+}
+
+.exploreWrapper {
+  padding: 4rem;
+  border-radius: 24px;
+  background-color: #241717;
+}
+
+.topicCard {
+  background-color: #fff0e6;
+  height: 100%;
+  padding: 28px;
+  border-radius: 16px;
+  transition: transform 0.2s ease;
+}
+
+.topicCard:hover {
+  transform: translateY(-4px);
+}
+.titleEx {
+  font-weight: 700;
+  letter-spacing: 0%;
+  font-family: "Agdasima", sans-serif;
+  font-size: 36px;
+  line-height: 44px;
+  color: #ffffff;
+}
+.subtitleEx {
+  color: #f0f0f0;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  letter-spacing: -2%;
+}
