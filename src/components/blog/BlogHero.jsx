@@ -5,7 +5,6 @@ const BlogHero = () => {
   return (
     <>
       <div className="container text-center py-5">
-        
         {/* Top Label */}
         <p className={`${style.topLabel} mb-2`}>Blog</p>
 
@@ -17,10 +16,9 @@ const BlogHero = () => {
 
         {/* Subtitle */}
         <p className={`${style.subText} mx-auto`} style={{ maxWidth: "650px" }}>
-          Learn how to build, manage, and scale your business with expert advice 
+          Learn how to build, manage, and scale your business with expert advice
           from the Branmart team.
         </p>
-
       </div>
     </>
   );
