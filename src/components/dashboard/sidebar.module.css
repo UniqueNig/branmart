@@ -1,0 +1,217 @@
+/* ================================
+   BASE SIDEBAR STYLES
+================================ */
+
+.sidebar {
+  width: 280px;
+  background-color: #ffffff;
+  border-right: 1px solid #e5e5e5;
+  height: 100vh;
+  transition: width 0.3s ease, left 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+/* COLLAPSED STATE (Desktop Only) */
+.collapsed {
+  width: 80px !important;
+}
+
+.logo {
+  transition: opacity 0.3s ease;
+}
+
+/* Hide text inside collapsed sidebar */
+.collapsed .logo,
+.collapsed .nav-link span,
+.collapsed .dropdownList {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* NAV LINKS */
+.nav-link {
+  font-weight: 600;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -2%;
+  color: #414651;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.nav-link:hover {
+  background-color: #f5f5f5;
+  color: black;
+}
+
+.active {
+  background-color: #ffecd3 !important;
+  color: #a12b0b !important;
+  border-radius: 6px;
+  padding: 8px 12px 8px 12px;
+}
+
+/* ACTIVE LINK */
+.activeLink {
+  background-color: #ffecd3;
+  color: #a12b0b;
+  border-radius: 6px;
+  padding: 8px 12px 8px 12px;
+}
+
+/* ICON SPACING (auto-space in collapsed mode is handled via component) */
+.nav-link svg {
+  min-width: 20px;
+}
+
+/* ================================
+   DROPDOWN ANIMATION
+================================ */
+
+.dropdownToggle {
+  cursor: pointer;
+}
+
+.dropdownList {
+  list-style: none;
+  padding-left: 8px;
+  animation: dropdownFade 0.25s ease;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================================
+   MOBILE SIDEBAR (Off-Canvas)
+================================ */
+
+@media (max-width: 991px) {
+  .sidebar {
+    width: 260px !important; /* always full width on mobile */
+    position: fixed !important;
+    left: -260px; /* hidden by default, JS sets visible */
+    top: 0;
+    z-index: 2000;
+    height: 100vh;
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.08);
+  }
+
+  /* When sidebar is NOT collapsed (open) */
+  .sidebarOpen {
+    left: 0 !important;
+  }
+
+  /* Hide logo only if explicitly collapsed */
+  .collapsed .logo {
+    opacity: 0;
+  }
+}
+
+/* ================================
+   SCROLL FOR SMALL SCREENS
+================================ */
+
+.sidebar {
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 4px;
+}
+
+.trialBox {
+  background: #fafafa;
+  border-radius: 8px;
+  padding: 20px 16px 20px 16px;
+  font-size: 14px;
+}
+.trialTitle {
+  font-weight: 600;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #181D27;
+  letter-spacing: -2%;
+  margin-bottom: 10px;
+}
+.trialBox p {
+  margin: 0;
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #535862;
+  letter-spacing: -2%;
+}
+
+.dismissBtn {
+  font-weight: 600;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #535862;
+  letter-spacing: -2%;
+  text-decoration: none;
+}
+.dismissBtn:hover{
+    color: black;
+}
+
+.upgradeBtn {
+  color: #A12B0B;
+   font-weight: 600;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -2%;
+  text-decoration: none;
+}
+
+.userBox {
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
+
+.userName {
+  font-weight: 600;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: #181D27;
+  letter-spacing: -2%;
+}
+
+.userEmail {
+  font-weight: 400;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #535862;
+  letter-spacing: -2%;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 200px;
+  object-fit: cover;
+}

@@ -22,6 +22,7 @@ import ContactUs from "./pages/ContactUs";
 import Blog from "./pages/Blog";
 import BlogDetails from "./pages/BlogDetails";
 import HelpCentre from "./pages/HelpCentre";
+import Dashboard from "./pages/Dashboard";
 // import './App.css'
 
 function App() {
@@ -60,6 +61,12 @@ function App() {
           path="/reset-password/success"
           element={<ResetPasswordSuccess />}
         />
+
+        {/* Dashboard parent route */}
+
+        <Route path="/dashboard" element={<Dashboard />}>
+          {/* <Route path=""/> */}
+        </Route>
       </Routes>
     </>
   );

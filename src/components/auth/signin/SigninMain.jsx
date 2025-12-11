@@ -16,7 +16,7 @@ const SigninMain = () => {
 
     onSubmit: (values) => {
       console.log(values);
-      navigate("");
+      navigate("/dashboard");
     },
     validationSchema: yup.object({
       email: yup

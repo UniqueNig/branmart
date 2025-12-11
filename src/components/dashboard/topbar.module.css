@@ -1,0 +1,69 @@
+.topbar {
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Hamburger hidden on desktop */
+.mobileMenu {
+  background: none;
+  border: none;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobileMenu {
+    display: block;
+  }
+}
+
+.welcome {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 20px;
+  line-height: 30px;
+  color: #181d27;
+  letter-spacing: -3%;
+  font-weight: 600;
+  color: #181d27;
+}
+
+.quickText {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #535862;
+  letter-spacing: -2%;
+  font-weight: 400;
+}
+
+.profileBox {
+  border: 1px solid #d5d7da;
+  padding: 4px 8px 4px 8px;
+  border-radius: 999px;
+}
+
+.myStore {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #535862;
+  letter-spacing: -2%;
+  font-weight: 500;
+}
+
+.storeMenu {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #414651;
+  letter-spacing: -2%;
+  font-weight: 500;
+}
+
+.storeMenup {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 12px;
+  line-height: 18px;
+  color: #535862;
+  letter-spacing: -2%;
+  font-weight: 400;
+}
