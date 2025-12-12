@@ -22,7 +22,9 @@ import ContactUs from "./pages/ContactUs";
 import Blog from "./pages/Blog";
 import BlogDetails from "./pages/BlogDetails";
 import HelpCentre from "./pages/HelpCentre";
-import Dashboard from "./pages/Dashboard";
+// import Dashboard from "./pages/Dashboard";
+import DashboardLayout from "./components/dashboard/DashboardLayout";
+import DashboardHome from "./pages/DashboardHome";
 // import './App.css'
 
 function App() {
@@ -64,8 +66,8 @@ function App() {
 
         {/* Dashboard parent route */}
 
-        <Route path="/dashboard" element={<Dashboard />}>
-          {/* <Route path=""/> */}
+        <Route path="/dashboard" element={<DashboardLayout />}>
+         <Route index element={<DashboardHome/>}/>
         </Route>
       </Routes>
     </>

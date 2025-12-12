@@ -30,7 +30,7 @@ const SideBar = ({ collapsed, setCollapsed, isMobile }) => {
 
   return (
     <aside
-      className={`${style.sidebar}
+      className={` ${style.sidebar}
     ${collapsed && !isMobile ? style.collapsed : ""}
     ${isMobile && !collapsed ? style.sidebarOpen : ""}
   `}

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import SideBar from "./SideBar";
 import TopBar from "./TopBar";
+import { Outlet } from "react-router-dom";
 
-const DashboardLayout = ({ children }) => {
+const DashboardLayout = () => {
   const [collapsed, setCollapsed] = useState(false);
 
   // Safe window check (important for SSR)
@@ -22,7 +23,7 @@ const DashboardLayout = ({ children }) => {
   // Ensure sidebar behaves correctly when switching to mobile
   useEffect(() => {
     if (isMobile) {
-      setCollapsed(true);   // Sidebar hidden on mobile by default
+      setCollapsed(true); // Sidebar hidden on mobile by default
     }
   }, [isMobile]);
 
@@ -40,17 +41,19 @@ const DashboardLayout = ({ children }) => {
         className="flex-grow-1"
         style={{
           marginLeft: isMobile
-            ? "0px"                 // sidebar hidden on mobile
+            ? "0px" // sidebar hidden on mobile
             : collapsed
-            ? "0"                // collapsed desktop width
-            : "0",              // full desktop width
+            ? "0" // collapsed desktop width
+            : "0", // full desktop width
           transition: "margin-left 0.3s ease",
           backgroundColor: "#fafafa",
           minHeight: "100vh",
         }}
       >
         <TopBar setCollapsed={setCollapsed} isMobile={isMobile} />
-        <div className="p-4">{children}</div>
+        <div className="p-4">
+          <Outlet />
+        </div>
       </div>
     </div>
   );

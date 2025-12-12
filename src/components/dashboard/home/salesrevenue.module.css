@@ -1,0 +1,150 @@
+/* Card container */
+.cardBox {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+}
+
+/* Title */
+.cardTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tabBtn {
+  border: none;
+  background: #f0f0f0;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.active {
+  background: #000;
+  color: #fff;
+}
+
+/* Chart Area */
+.chartArea {
+  height: 260px;
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.chartColumn {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.bar {
+  width: 100%;
+  background: #ffd7b5;
+  border-radius: 6px 6px 0 0;
+  position: relative;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.highlightBar {
+  background: #ff5722;
+}
+
+.monthLabel {
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+/* Tooltip */
+.tooltipBox {
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.tooltipBox p {
+  margin: 0;
+  color: #444;
+  font-size: 0.85rem;
+}
+
+/* Donut Chart */
+.donutWrapper {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: auto;
+}
+
+.donutRing {
+  fill: none;
+  stroke: #eee;
+}
+
+.donutSegment {
+  fill: none;
+  stroke-linecap: round;
+  transition: 0.4s ease;
+}
+
+.donutCenter {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.centerLabel {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.centerValue {
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Legend */
+.colorDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.legendLabel {
+  font-size: 0.9rem;
+}
+
+.legendValue {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* View All */
+.viewAllBtn {
+  background: transparent;
+  border: none;
+  color: #ff5722;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
