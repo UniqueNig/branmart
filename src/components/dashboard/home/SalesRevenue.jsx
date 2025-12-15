@@ -9,41 +9,63 @@ const SalesRevenue = () => {
      Monthly dataset (example)
   ----------------------------- */
   const monthlyData = [
-    { month: "Jan", value: 50000 },
-    { month: "Feb", value: 60000 },
-    { month: "Mar", value: 75000 },
-    { month: "Apr", value: 100000 },
-    { month: "May", value: 95000 },
-    { month: "Jun", value: 50000, highlight: true },
-    { month: "Jul", value: 80000 },
-    { month: "Aug", value: 105000 },
-    { month: "Sep", value: 90000 },
-    { month: "Oct", value: 110000 },
-    { month: "Nov", value: 85000 },
-    { month: "Dec", value: 65000 },
+    { label: "Jan", value: 50000 },
+    { label: "Feb", value: 60000 },
+    { label: "Mar", value: 75000 },
+    { label: "Apr", value: 100000 },
+    { label: "May", value: 95000 },
+    { label: "Jun", value: 95000, highlight: true },
+    { label: "Jul", value: 80000 },
+    { label: "Aug", value: 105000 },
+    { label: "Sep", value: 90000 },
+    { label: "Oct", value: 110000 },
+    { label: "Nov", value: 85000 },
+    { label: "Dec", value: 65000 },
   ];
+
+  const quarterlyData = [
+    { label: "Q1", value: 185000 },
+    { label: "Q2", value: 245000, highlight: true },
+    { label: "Q3", value: 275000 },
+    { label: "Q4", value: 260000 },
+  ];
+
+  const yearlyData = [
+    { label: "2021", value: 820000 },
+    { label: "2022", value: 960000 },
+    { label: "2023", value: 1100000, highlight: true },
+    { label: "2024", value: 1250000 },
+  ];
+
+  let chartData = [];
+
+  if (activeTab === "monthly") {
+    chartData = monthlyData;
+  } else if (activeTab === "quarterly") {
+    chartData = quarterlyData;
+  } else {
+    chartData = yearlyData;
+  }
 
   /* ----------------------------
      Category donut chart data
   ----------------------------- */
   const categoryData = [
-    { label: "Electronics", value: 85000, percent: 60, color: "#FF5722" },
-    { label: "Fashion", value: 20000, percent: 20, color: "#E91E63" },
-    { label: "Home & living", value: 15000, percent: 15, color: "#7C4DFF" },
-    { label: "Health & Wellness", value: 5000, percent: 5, color: "#FFC107" },
+    { label: "Electronics", value: 85000, percent: 60, color: "#FF4F00" },
+    { label: "Fashion", value: 20000, percent: 20, color: "#EE46BC" },
+    { label: "Home & living", value: 15000, percent: 15, color: "#7A5AF8" },
+    { label: "Health & Wellness", value: 5000, percent: 5, color: "#F79009" },
   ];
 
   const totalSales = categoryData.reduce((acc, x) => acc + x.value, 0);
-  const maxValue = Math.max(...monthlyData.map((x) => x.value));
+  const maxValue = Math.max(...chartData.map((x) => x.value));
 
   return (
     <section className="container mt-4">
-
       {/* ================================
           ROW WRAPPER
       ================================= */}
       <div className="row g-4">
-
         {/* ================================
             SALES REVENUE CHART
         ================================= */}
@@ -51,7 +73,10 @@ const SalesRevenue = () => {
           <div className={style.cardBox}>
             <div className="d-flex justify-content-between align-items-center mb-3">
               <div className="d-flex align-items-center gap-2">
-                <i className="bi bi-bar-chart-line"></i>
+                <i
+                  className="bi bi-bar-chart-line"
+                  style={{ color: "#CC3602" }}
+                ></i>
                 <h5 className={style.cardTitle}>Sales Revenue</h5>
               </div>
 
@@ -73,7 +98,7 @@ const SalesRevenue = () => {
 
             {/* Bar Chart */}
             <div className={style.chartArea}>
-              {monthlyData.map((item, i) => {
+              {chartData.map((item, i) => {
                 const barHeight = (item.value / maxValue) * 100;
 
                 return (
@@ -86,15 +111,16 @@ const SalesRevenue = () => {
                       onMouseEnter={() => setHoverIndex(i)}
                       onMouseLeave={() => setHoverIndex(null)}
                     >
-                      {/* Tooltip */}
                       {hoverIndex === i && (
                         <div className={style.tooltipBox}>
-                          <strong>{item.month} 2025</strong>
+                          <strong className={style.cardTitle}>
+                            {item.label}
+                          </strong>
                           <p>${item.value.toLocaleString()}</p>
                         </div>
                       )}
                     </div>
-                    <p className={style.monthLabel}>{item.month}</p>
+                    <p className={style.monthLabel}>{item.label}</p>
                   </div>
                 );
               })}
@@ -109,7 +135,7 @@ const SalesRevenue = () => {
           <div className={style.cardBox}>
             <div className="d-flex justify-content-between align-items-center mb-3">
               <div className="d-flex align-items-center gap-2">
-                <i className="bi bi-stack"></i>
+                <i className="bi bi-stack" style={{ color: "#CC3602" }}></i>
                 <h5 className={style.cardTitle}>Top Categories</h5>
               </div>
 
@@ -128,29 +154,34 @@ const SalesRevenue = () => {
                 />
 
                 {/* Segments */}
-                {categoryData.reduce((acc, item, idx) => {
-                  const prevPercent = acc.total;
-                  const dash = (item.percent / 100) * 100;
-                  const gap = 0.5;
+                {
+                  categoryData.reduce(
+                    (acc, item, idx) => {
+                      const prevPercent = acc.total;
+                      const dash = (item.percent / 100) * 100;
+                      const gap = 0.5;
 
-                  acc.total += item.percent;
+                      acc.total += item.percent;
 
-                  acc.elements.push(
-                    <circle
-                      key={idx}
-                      className={style.donutSegment}
-                      cx="21"
-                      cy="21"
-                      r="15.915"
-                      strokeWidth="6"
-                      stroke={item.color}
-                      strokeDasharray={`${dash} ${100 - dash}`}
-                      strokeDashoffset={-prevPercent}
-                    />
-                  );
+                      acc.elements.push(
+                        <circle
+                          key={idx}
+                          className={style.donutSegment}
+                          cx="21"
+                          cy="21"
+                          r="15.915"
+                          strokeWidth="6"
+                          stroke={item.color}
+                          strokeDasharray={`${dash} ${100 - dash}`}
+                          strokeDashoffset={-prevPercent}
+                        />
+                      );
 
-                  return acc;
-                }, { total: 0, elements: [] }).elements}
+                      return acc;
+                    },
+                    { total: 0, elements: [] }
+                  ).elements
+                }
               </svg>
 
               <div className={style.donutCenter}>
@@ -176,8 +207,11 @@ const SalesRevenue = () => {
                     <span className={style.legendLabel}>{item.label}</span>
                   </div>
 
-                  <span className={style.legendValue}>
-                    ${item.value.toLocaleString()} {item.percent}%
+                  <span>
+                    <div className="d-flex  align-items-center gap-1">
+                      <p  className={style.legendValue}>${item.value.toLocaleString()}{" "}</p>
+                      <p className={style.percent}>{item.percent}%</p>
+                    </div>
                   </span>
                 </div>
               ))}
