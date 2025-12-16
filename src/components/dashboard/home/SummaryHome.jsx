@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import style from "./summary.module.css";
-import tshirt from "../../../assets/t-shirtmockup.png"
-import happywoman from "../../../assets/Happywomanclapping.png"
-import smartdevice from "../../../assets/Smartdeviceessentials.png"
-import storehouse from "../../../assets/store.png"
-import mastercard from "../../../assets/mastercard.png"
-import visa from "../../../assets/visa.png"
-import gpay from "../../../assets/gpay.png"
-
+import tshirt from "../../../assets/t-shirtmockup.png";
+import happywoman from "../../../assets/Happywomanclapping.png";
+import smartdevice from "../../../assets/Smartdeviceessentials.png";
+import storehouse from "../../../assets/store.png";
+import mastercard from "../../../assets/mastercard.png";
+import visa from "../../../assets/visa.png";
+import gpay from "../../../assets/gpay.png";
+import { Link } from "react-router-dom";
 
 const SummaryHome = () => {
   // -----------------------------------
@@ -29,6 +29,15 @@ const SummaryHome = () => {
   // -----------------------------------
   const [storeSetupComplete, setStoreSetupComplete] = useState(false);
   const [businessProfileComplete, setBusinessProfileComplete] = useState(false);
+
+  useEffect(() => {
+    const storeSetup = localStorage.getItem("storeSetupComplete") === "true";
+    const businessProfile =
+      localStorage.getItem("businessProfileComplete") === "true";
+
+    setStoreSetupComplete(storeSetup);
+    setBusinessProfileComplete(businessProfile);
+  }, []);
 
   // When both are done, both cards should disappear.
   const showSetupSection = !storeSetupComplete || !businessProfileComplete;
@@ -153,12 +162,12 @@ const SummaryHome = () => {
                     theme.
                   </p>
 
-                  <button
+                  <Link
+                    to="/store-setup/plan"
                     className={`btn ${style.actionBtn}`}
-                    onClick={() => setStoreSetupComplete(true)}
                   >
                     Complete Setup
-                  </button>
+                  </Link>
                 </div>
 
                 <img
@@ -183,12 +192,12 @@ const SummaryHome = () => {
                     business.
                   </p>
 
-                  <button
+                  <Link
+                    to="/dashboard/business-profile"
                     className={`btn ${style.actionBtn}`}
-                    onClick={() => setBusinessProfileComplete(true)}
                   >
                     Complete Business Profile
-                  </button>
+                  </Link>
                 </div>
 
                 <img
@@ -212,8 +221,12 @@ const SummaryHome = () => {
             <div className={style.smallCard}>
               <h5 className={style.smallTitle}>Add your first product</h5>
               <div className="row gap-2 mt-2 mb-2">
-                <div className="col-md-2 my-2 col-sm-6"><img src={tshirt} className="img-fluid" alt="" /></div>
-                <div className="col-md-2 my-2  col-sm-6"><img src={smartdevice} className="img-fluid" alt="" /></div>
+                <div className="col-md-2 my-2 col-sm-6">
+                  <img src={tshirt} className="img-fluid" alt="" />
+                </div>
+                <div className="col-md-2 my-2  col-sm-6">
+                  <img src={smartdevice} className="img-fluid" alt="" />
+                </div>
               </div>
               <button
                 className={`btn ${style.smallBtn}`}
@@ -231,9 +244,15 @@ const SummaryHome = () => {
             <div className={style.smallCard}>
               <h5 className={style.smallTitle}>Set up payments</h5>
               <div className="row gap-2 mt-2 mb-3">
-                <div className="col-md-2 my-2 col-sm-4"><img src={mastercard} className="img-fluid" alt="" /></div>
-                <div className="col-md-2 my-2 col-sm-4"><img src={visa} className="img-fluid" alt="" /></div>
-                <div className="col-md-2 my-2 col-sm-4"><img src={gpay} className="img-fluid" alt="" /></div>
+                <div className="col-md-2 my-2 col-sm-4">
+                  <img src={mastercard} className="img-fluid" alt="" />
+                </div>
+                <div className="col-md-2 my-2 col-sm-4">
+                  <img src={visa} className="img-fluid" alt="" />
+                </div>
+                <div className="col-md-2 my-2 col-sm-4">
+                  <img src={gpay} className="img-fluid" alt="" />
+                </div>
               </div>
               <button
                 className={`btn ${style.smallBtn}`}

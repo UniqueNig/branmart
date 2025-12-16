@@ -1,0 +1,122 @@
+/* Card */
+.cardBox {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Titles */
+.cardTitle {
+  font-weight: 600;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: -2%;
+  color: #181d27;
+  margin: 0;
+}
+
+/* View all */
+.viewAll {
+  background: transparent;
+  border: none;
+  color: #A12B0B;
+  font-weight: 600;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -2%;
+  cursor: pointer;
+}
+
+/* Activity Item */
+.activityItem {
+  display: flex;
+  gap: 1rem;
+  padding: 0.9rem;
+  border-radius: 12px;
+  border: 1px solid #eee;
+}
+
+/* Icon wrapper */
+.iconWrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+/* Activity colors */
+.order {
+  background: #ffd4a5;
+  color: #cc3602;
+}
+
+.user {
+  background: #d1fadf;
+  color: #039855;
+}
+
+.alert {
+  background: #fef0c7;
+  color: #dc6803;
+}
+
+/* Text */
+.activityText {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: #181d27;
+  letter-spacing: -2%;
+  font-weight: 500;
+  margin: 0;
+}
+
+.timeText {
+  color: #535862;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: -2%;
+  font-weight: 400;
+}
+
+/* Tip */
+.tipIcon {
+  width: 36px;
+  height: 36px;
+  background: #ffd4a5;
+  color: #cc3602;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tipText {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -2%;
+  font-weight: 400;
+  color: #535862;
+  margin: 0;
+}
+
+/* Support */
+.supportItem {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #414651;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -2%;
+  font-weight: 400;
+}

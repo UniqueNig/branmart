@@ -25,6 +25,7 @@ import HelpCentre from "./pages/HelpCentre";
 // import Dashboard from "./pages/Dashboard";
 import DashboardLayout from "./components/dashboard/DashboardLayout";
 import DashboardHome from "./pages/DashboardHome";
+import StoreSetup from "./pages/StoreSetup";
 // import './App.css'
 
 function App() {
@@ -67,8 +68,13 @@ function App() {
         {/* Dashboard parent route */}
 
         <Route path="/dashboard" element={<DashboardLayout />}>
-         <Route index element={<DashboardHome/>}/>
+          <Route index element={<DashboardHome />} />
         </Route>
+
+        {/* Store Setup route */}
+        <Route path="store-setup/plan" element={<StoreSetup />} />
+        {/* <Route path="/store-setup/payment" element={<PaymentPage />} /> */}
+        {/* <Route path="/store-setup/theme" element={<ThemePage />} /> */}
       </Routes>
     </>
   );

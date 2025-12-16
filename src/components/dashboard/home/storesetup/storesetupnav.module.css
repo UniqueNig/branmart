@@ -1,0 +1,72 @@
+/* Navbar */
+.navbar {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  padding: 0.6rem 1.2rem;
+}
+
+/* Brand */
+.brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #ff5722;
+}
+
+/* Profile section */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 4px 10px;
+  border: 1px solid #eee;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* Avatar */
+.avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Store name */
+.storeName {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.profileBox {
+  border: 1px solid #d5d7da;
+  padding: 4px 8px 4px 8px;
+  border-radius: 999px;
+}
+
+.myStore {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #535862;
+  letter-spacing: -2%;
+  font-weight: 500;
+}
+
+.storeMenu {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #414651;
+  letter-spacing: -2%;
+  font-weight: 500;
+}
+
+.storeMenup {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 12px;
+  line-height: 18px;
+  color: #535862;
+  letter-spacing: -2%;
+  font-weight: 400;
+}
