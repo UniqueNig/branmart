@@ -31,6 +31,7 @@ import StoreSetupPayment from "./pages/StoreSetupPayment";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import ChooseTheme from "./pages/ChooseTheme";
 import ThemeChoosen from "./pages/ThemeChoosen";
+import NotFound from "./pages/NotFound";
 // import './App.css'
 
 function App() {
@@ -42,6 +43,9 @@ function App() {
   return (
     <>
       <Routes>
+        {/* Wildcard Route */}
+        <Route path="*" element={<NotFound />} />
+
         {/* Main pages */}
         <Route path="/" element={<Homepage />} />
         <Route path="/features" element={<Features />} />
@@ -78,12 +82,14 @@ function App() {
 
         {/* Store Setup route */}
         <Route path="store-setup/plan" element={<StoreSetup />} />
-        <Route path="choose-gateway" element={<HowtoPay/>} />
+        <Route path="choose-gateway" element={<HowtoPay />} />
         <Route path="store-setup/payment" element={<StoreSetupPayment />} />
-        <Route path="store-setup/payment-success" element={<PaymentSuccess/>} />
+        <Route
+          path="store-setup/payment-success"
+          element={<PaymentSuccess />}
+        />
         <Route path="store-setup/theme" element={<ChooseTheme />} />
         <Route path="store-setup/theme-chosen" element={<ThemeChoosen />} />
-
       </Routes>
     </>
   );
