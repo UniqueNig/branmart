@@ -1,0 +1,81 @@
+.gatewayCard {
+  border: 1px solid #e4e7ec;
+  border-radius: 8px;
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  height: 100%;
+  /* width: 185px; */
+}
+
+.gatewaypara {
+  font-weight: 400;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -2%;
+}
+.gatewayheading {
+  font-weight: 600;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -3%;
+}
+
+.gatewayCard:hover {
+  border-color: #ff4f00;
+}
+
+.active {
+  border-color: #ff4f00;
+  background-color: #fff6ec;
+}
+
+.cancelBtn {
+  border: 1px solid #d0d5dd;
+  background: white;
+  border-radius: 100px;
+  padding: 12px 20px;
+  font-weight: 600;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -2%;
+}
+
+.cancelBtn:hover {
+  border: 1px solid #d0d5dd;
+  background: #e4e7ec;
+  color: black;
+}
+
+.continueBtn {
+  background-color: #cc3602;
+  color: white;
+  border-radius: 100px;
+  padding: 12px 20px 12px 20px;
+  font-weight: 600;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -2%;
+}
+.continueBtn:hover {
+  background-color: #cc3602;
+  color: white;
+  opacity: 0.7;
+}
+
+.continueBtn:disabled {
+  opacity: 0.6;
+}
+
+.gatewayTitle {
+  font-weight: 500;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -2%;
+  color: #181d27;
+}

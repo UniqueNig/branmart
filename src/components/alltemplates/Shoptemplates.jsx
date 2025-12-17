@@ -621,9 +621,12 @@ const Shoptemplates = () => {
                         <div
                           className={`${style.overlay} d-flex flex-column justify-content-center align-items-center`}
                         >
-                          <button className={`btn ${style["btn-orange"]} mb-2`}>
+                          <Link
+                            to={"/store-setup/theme-chosen"}
+                            className={`btn ${style["btn-orange"]} mb-2`}
+                          >
                             Use template
-                          </button>
+                          </Link>
                           <Link
                             className={style["preview-link"]}
                             to={"/template-details"}

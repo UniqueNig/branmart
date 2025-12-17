@@ -7,33 +7,38 @@ const steps = [
   { key: "plan", label: "Select plan" },
   { key: "payment", label: "Make payment" },
   { key: "theme", label: "Choose a theme" },
+  { key: "theme-chosen", label: "" },
 ];
 
 const BreadCrum = () => {
   const location = useLocation();
 
   // detect current step from URL
-  const currentStepIndex = steps.findIndex(step =>
+  const currentStepIndex = steps.findIndex((step) =>
     location.pathname.includes(step.key)
   );
 
+  const isThemeChosen = location.pathname.includes("theme-chosen");
+
   return (
     <div className="d-flex justify-content-center align-items-center gap-3 py-5 border-bottom">
-
       {steps.map((step, index) => {
-        const isCompleted = index < currentStepIndex;
-        const isActive = index === currentStepIndex;
+        const isCompleted = isThemeChosen
+          ? index < steps.length - 1
+          : index < currentStepIndex;
+
+        const isActive = !isThemeChosen && index === currentStepIndex;
 
         return (
           <div key={step.key} className="d-flex align-items-center gap-2">
-
             {/* ICON */}
             <div
               className={`${style.stepIcon} ${
-                isCompleted ? style.completed : ""
+                isCompleted || isThemeChosen ? style.completed : ""
               } ${isActive ? style.active : ""}`}
             >
-              {isCompleted ? <Check size={14} /> : index + 1}
+              {/* {isCompleted || isThemeChosen ? <Check size={14} /> : index + 1} */}
+                {!isThemeChosen && (isCompleted ? <Check size={14} /> : index + 1)}
             </div>
 
             {/* LABEL */}

@@ -26,6 +26,11 @@ import HelpCentre from "./pages/HelpCentre";
 import DashboardLayout from "./components/dashboard/DashboardLayout";
 import DashboardHome from "./pages/DashboardHome";
 import StoreSetup from "./pages/StoreSetup";
+import HowtoPay from "./pages/HowtoPay";
+import StoreSetupPayment from "./pages/StoreSetupPayment";
+import PaymentSuccess from "./pages/PaymentSuccess";
+import ChooseTheme from "./pages/ChooseTheme";
+import ThemeChoosen from "./pages/ThemeChoosen";
 // import './App.css'
 
 function App() {
@@ -73,8 +78,12 @@ function App() {
 
         {/* Store Setup route */}
         <Route path="store-setup/plan" element={<StoreSetup />} />
-        {/* <Route path="/store-setup/payment" element={<PaymentPage />} /> */}
-        {/* <Route path="/store-setup/theme" element={<ThemePage />} /> */}
+        <Route path="choose-gateway" element={<HowtoPay/>} />
+        <Route path="store-setup/payment" element={<StoreSetupPayment />} />
+        <Route path="store-setup/payment-success" element={<PaymentSuccess/>} />
+        <Route path="store-setup/theme" element={<ChooseTheme />} />
+        <Route path="store-setup/theme-chosen" element={<ThemeChoosen />} />
+
       </Routes>
     </>
   );

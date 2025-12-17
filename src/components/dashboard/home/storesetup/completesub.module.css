@@ -1,0 +1,127 @@
+.title {
+  font-weight: 700;
+  color: #241717;
+  letter-spacing: 0;
+  line-height: 36px;
+  font-size: 36px;
+  font-family: "Agdasima", sans-serif;
+}
+
+.subtitle {
+  color: #535862;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Bricolage Grotesque", sans-serif;
+  line-height: 24px;
+  letter-spacing: -2%;
+}
+
+.planCard {
+  background: #f9fafb;
+  width: 502px;
+  height: 106px;
+}
+
+.changeBtn {
+  color: #a12b0b;
+  font-weight: 600;
+  font-size: 16px;
+  font-family: "Bricolage Grotesque", sans-serif;
+  line-height: 24px;
+  letter-spacing: -2%;
+}
+.changeBtn:hover {
+  color: #a12b0b;
+  opacity: 0.6;
+}
+
+.muted {
+  color: #667185;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Bricolage Grotesque", sans-serif;
+  line-height: 20px;
+  letter-spacing: -2%;
+}
+
+.basicPlan {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "Bricolage Grotesque", sans-serif;
+  line-height: 30px;
+  letter-spacing: -3%;
+  color: #181d27;
+}
+
+.toggleWrap {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Bricolage Grotesque", sans-serif;
+  line-height: 24px;
+  letter-spacing: -2%;
+  color: #000000;
+}
+
+.orderBold {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Bricolage Grotesque", sans-serif;
+  line-height: 24px;
+  letter-spacing: -2%;
+  color: #181d27;
+}
+
+.save {
+  color: #ff4f00;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Bricolage Grotesque", sans-serif;
+  line-height: 20px;
+  letter-spacing: -2%;
+}
+
+.subscribeBtn {
+  background-color: #cc3602;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  font-family: "Bricolage Grotesque", sans-serif;
+  line-height: 24px;
+  letter-spacing: -2%;
+}
+
+.subscribeBtn:hover {
+  background-color: #cc3602;
+  opacity: 0.7;
+  color: #fff;
+}
+
+.subscribeBtn:hover {
+  background-color: #b83000;
+}
+
+.paymentDetail {
+  color: #1f2937;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "Bricolage Grotesque", sans-serif;
+  line-height: 28px;
+  letter-spacing: -2%;
+}
+label {
+  color: #414651;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Bricolage Grotesque", sans-serif;
+  line-height: 20px;
+  letter-spacing: -2%;
+}
+.orderLight{
+  color: #4B5563;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Bricolage Grotesque", sans-serif;
+  line-height: 20px;
+  letter-spacing: -2%;
+
+}

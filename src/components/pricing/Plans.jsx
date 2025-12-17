@@ -1,5 +1,6 @@
 import React from "react";
 import style from "../AllCss.module.css";
+import { Link } from "react-router-dom";
 
 const Plans = () => {
   return (
@@ -43,11 +44,16 @@ const Plans = () => {
                 <span className={`text-muted ${style.plans}`}>/monthly</span>
               </div>
 
-              <button className={`btn w-100 mt-4 py-2 ${style.outlineBtn}`}>
+              <Link
+                to={"/choose-gateway"}
+                className={`btn w-100 mt-4 py-2 ${style.outlineBtn}`}
+              >
                 Get Started Now
-              </button>
+              </Link>
 
-              <ul className={`list-unstyled mt-4 text-start ${style.featurePlan}`}>
+              <ul
+                className={`list-unstyled mt-4 text-start ${style.featurePlan}`}
+              >
                 <li className="mb-3 bi bi-check-circle">
                   {" "}
                   Basic website builder
@@ -72,11 +78,16 @@ const Plans = () => {
                 <span className={`text-light ${style.plans}`}>/monthly</span>
               </div>
 
-              <button className={`btn w-100 mt-4 py-2 ${style.filledBtn}`}>
+              <Link
+                to={"/choose-gateway"}
+                className={`btn w-100 mt-4 py-2 ${style.filledBtn}`}
+              >
                 Get Started Now
-              </button>
+              </Link>
 
-              <ul className={`list-unstyled mt-4 text-start text-light ${style.featurePlan}`}>
+              <ul
+                className={`list-unstyled mt-4 text-start text-light ${style.featurePlan}`}
+              >
                 <li className="mb-3 bi bi-check-circle"> Custom domain</li>
                 <li className="mb-3 bi bi-check-circle"> Unlimited products</li>
                 <li className="mb-3 bi bi-check-circle">
@@ -110,11 +121,16 @@ const Plans = () => {
                 <span className={`text-muted ${style.plans}`}>/monthly</span>
               </div>
 
-              <button className={`btn w-100 mt-4 py-2 ${style.outlineBtn}`}>
+              <Link
+                to={"/choose-gateway"}
+                className={`btn w-100 mt-4 py-2 ${style.outlineBtn}`}
+              >
                 Get Started Now
-              </button>
+              </Link>
 
-              <ul className={`list-unstyled mt-4 text-start ${style.featurePlan}`}>
+              <ul
+                className={`list-unstyled mt-4 text-start ${style.featurePlan}`}
+              >
                 <li className="mb-3 bi bi-check-circle"> All Pro Features</li>
                 <li className="mb-3 bi bi-check-circle"> API access</li>
                 <li className="mb-3 bi bi-check-circle"> Advanced reporting</li>

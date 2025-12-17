@@ -1,0 +1,22 @@
+.footerLink {
+  font-weight: 400;
+  font-family: "Bricolage Grotesque", sans-serif;
+  line-height: 20px;
+  letter-spacing: -2%;
+  font-size: 14px;
+  color: #717680;
+  text-decoration: none;
+}
+
+.footerLink:hover {
+  text-decoration: underline;
+}
+
+.footerText {
+  font-weight: 400;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -2%;
+  color: #717680;
+}
