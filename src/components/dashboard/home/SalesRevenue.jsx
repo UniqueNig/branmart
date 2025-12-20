@@ -61,7 +61,7 @@ const SalesRevenue = () => {
   const maxValue = Math.max(...chartData.map((x) => x.value));
 
   return (
-    <section className="container mt-4">
+    <section className="container">
       {/* ================================
           ROW WRAPPER
       ================================= */}

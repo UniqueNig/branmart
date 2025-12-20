@@ -32,6 +32,9 @@ import PaymentSuccess from "./pages/PaymentSuccess";
 import ChooseTheme from "./pages/ChooseTheme";
 import ThemeChoosen from "./pages/ThemeChoosen";
 import NotFound from "./pages/NotFound";
+import BusinessSetup from "./pages/BusinessSetup";
+import KycVerification from "./pages/KycVerification";
+import KycSuccess from "./pages/KycSuccess";
 // import './App.css'
 
 function App() {
@@ -90,6 +93,11 @@ function App() {
         />
         <Route path="store-setup/theme" element={<ChooseTheme />} />
         <Route path="store-setup/theme-chosen" element={<ThemeChoosen />} />
+
+        {/* Business Setup Route */}
+        <Route path="business-setup/info" element={<BusinessSetup />} />
+        <Route path="business-setup/kyc" element={<KycVerification />} />
+        <Route path="business-setup/kyc-success" element={<KycSuccess />} />
       </Routes>
     </>
   );

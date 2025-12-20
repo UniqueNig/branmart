@@ -193,7 +193,7 @@ const SummaryHome = () => {
                   </p>
 
                   <Link
-                    to="/dashboard/business-profile"
+                    to="/business-setup/info"
                     className={`btn ${style.actionBtn}`}
                   >
                     Complete Business Profile
@@ -214,7 +214,7 @@ const SummaryHome = () => {
       {/* =======================
           ONBOARDING STEPS
       ======================== */}
-      <div className="row g-4 mb-5">
+      <div className="row g-4">
         {/* Add Product */}
         {!productAdded && (
           <div className="col-xl-4 col-lg-4 col-md-6">

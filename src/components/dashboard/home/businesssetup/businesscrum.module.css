@@ -1,0 +1,51 @@
+.stepIcon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1.5px solid #d0d5dd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -2%;
+  font-weight: 400;
+  color: #5c5c5c;
+
+}
+
+.active {
+  background-color: #ff4f00;
+  border-color: #ff4f00;
+  color: white;
+}
+
+.completed {
+  background-color: #12b76a;
+  border-color: #12b76a;
+  color: white;
+}
+
+.stepLabel {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -2%;
+  font-weight: 400;
+  color: #5c5c5c;
+}
+
+.activeText {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -2%;
+  font-weight: 400;
+  color: #181d27;
+}
+
+.arrow {
+  margin: 0 6px;
+  color: #98a2b3;
+}
