@@ -398,6 +398,7 @@ const AddProd = () => {
 
       {/* Footer Actions */}
       <div className={`d-flex justify-content-end gap-3 mt-4 ${style.footer}`}>
+        <button className={`btn ${style.discard}`}>Discard</button>
         <button
           className={`btn ${style.draft}`}
           onClick={() => {
@@ -418,7 +419,7 @@ const AddProd = () => {
           Save as draft
         </button>
 
-        <button className={`btn ${style.draft}`}>Save as draft</button>
+        
         <button className={`btn ${style.create}`} onClick={handleCreateProduct}>
           Create product
         </button>
