@@ -2,9 +2,68 @@ import React, { useState, useEffect, useRef } from "react";
 import style from "./topbar.module.css";
 import avatar from "../../assets/avatar.png";
 import { Bell, ChevronDown, Search, Menu, LogOut } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const TopBar = ({ setCollapsed, isMobile }) => {
+  const PAGE_META = [
+    {
+      path: "/dashboard",
+      title: "Welcome back, {{name}}",
+      subtitle: "Here is a quick view of your store activity.",
+      exact: true,
+    },
+    {
+      path: "/dashboard/products",
+      title: "Products",
+      subtitle: "Manage and organize your products here.",
+    },
+    {
+      path: "/dashboard/add-product",
+      title: "Products",
+      subtitle: "Manage and organize your products here.",
+    },
+    {
+      path: "/orders",
+      title: "Orders",
+      subtitle: "Track and manage customer orders.",
+    },
+    {
+      path: "/customers",
+      title: "Customers",
+      subtitle: "View and manage your customers.",
+    },
+    {
+      path: "/payments",
+      title: "Payments",
+      subtitle: "Review transactions and payouts.",
+    },
+    {
+      path: "/marketing",
+      title: "Marketing",
+      subtitle: "Promote your store and increase sales.",
+    },
+    {
+      path: "/settings",
+      title: "Settings",
+      subtitle: "Manage your account and preferences.",
+    },
+  ];
+
+  const location = useLocation();
+
+  const pageMeta = PAGE_META.find((page) =>
+    page.exact
+      ? location.pathname === page.path
+      : location.pathname.startsWith(page.path)
+  ) || {
+    title: "Dashboard",
+    subtitle: "Overview of your store activity.",
+  };
+
+  const user = {
+    name: "Olivia",
+  };
+
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef();
 
@@ -35,11 +94,9 @@ const TopBar = ({ setCollapsed, isMobile }) => {
 
         <div>
           <h5 className={`${style.welcome} fw-semibold m-0`}>
-            Welcome back, Olivia
+            {pageMeta.title.replace("{{name}}", user.name)}
           </h5>
-          <p className={`${style.quickText} m-0`}>
-            Here is a quick view of your store activity.
-          </p>
+          <p className={`${style.quickText} m-0`}>{pageMeta.subtitle}</p>
         </div>
 
         <div className="d-flex align-items-center gap-3">
@@ -120,7 +177,9 @@ const TopBar = ({ setCollapsed, isMobile }) => {
                   className={`dropdown-item d-flex align-items-center gap-1 `}
                 >
                   <LogOut size={18} />{" "}
-                  <Link className={`${style.storeMenu} text-decoration-none`}>Log out</Link>
+                  <Link className={`${style.storeMenu} text-decoration-none`}>
+                    Log out
+                  </Link>
                 </div>
               </li>
             </ul>

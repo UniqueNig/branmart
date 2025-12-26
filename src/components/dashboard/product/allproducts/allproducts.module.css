@@ -1,0 +1,191 @@
+/* =========================
+   STAT CARDS
+========================= */
+.statCard {
+  background: #ffffff;
+  border: 1px solid #eef0f3;
+}
+
+.statCard p {
+  color: #667085;
+}
+
+.statCard h4 {
+  color: #101828;
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+.emptyBox {
+  background: #ffffff;
+  border: 1px solid #eef0f3;
+  border-radius: 12px;
+}
+
+.emptyBox h5 {
+  color: #101828;
+}
+
+.emptyBox p {
+  color: #667085;
+}
+
+/* =========================
+   ADD BUTTON
+========================= */
+.addBtn {
+  background: white;
+  color: #414651;
+  border: #d5d7da 1px solid;
+  border-radius: 24px;
+  padding: 10px 16px;
+  font-weight: 600;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -2%;
+}
+
+.addBtn:hover {
+  background: #b7b2b2;
+   color: #414651;
+}
+
+.statuspara{
+color: #535862;
+      font-weight: 400;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -2%;
+}
+
+/* =========================
+   TABLE
+========================= */
+.tableHead th {
+  color: #535862;
+  background: #f9fafb;
+  border-bottom: 1px solid #eef0f3;
+  font-weight: 500;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: -2%;
+}
+
+tbody td {
+  color: #181d27;
+  border-bottom: 1px solid #eef0f3;
+  font-weight: 500;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -2%;
+}
+
+/* =========================
+   STATUS BADGES
+========================= */
+.badge {
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 16px;
+  display: inline-block;
+}
+
+/* Active */
+.Active {
+  font-weight: 500;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -2%;
+  background: #ecfdf3;
+  color: #027a48;
+}
+
+/* Out of Stock */
+.OutofStock {
+  font-weight: 500;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -2%;
+  background: #fff6ed;
+  color: #c4320a;
+}
+
+/* Draft */
+.Draft {
+  font-weight: 500;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -2%;
+  background: #f2f4f7;
+  color: #344054;
+}
+
+.statusNum {
+  font-weight: 600;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: -3%;
+  color: #181d27;
+}
+
+/* =========================
+   DROPDOWN
+========================= */
+.dropdown-menu {
+  border-radius: 8px;
+  border: 1px solid #eef0f3;
+}
+
+.dropdown-item {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* =========================
+   FILTER INPUTS
+========================= */
+input.form-control,
+select.form-select {
+  border-radius: 8px;
+  border: 1px solid #d0d5dd;
+  font-size: 14px;
+}
+
+input.form-control::placeholder {
+  color: #98a2b3;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .addBtn {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+}
+
+/* optional */
+.btn-warning {
+  background: #d92d20;
+  border-color: #d92d20;
+}
+
+.productLabel {
+  font-weight: 400;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: -2%;
+  color: #535862;
+}

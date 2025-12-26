@@ -8,6 +8,7 @@ import mastercard from "../../../assets/mastercard.png";
 import visa from "../../../assets/visa.png";
 import gpay from "../../../assets/gpay.png";
 import { Link } from "react-router-dom";
+import { useProducts } from "../../../context/ProductContext";
 
 const SummaryHome = () => {
   // -----------------------------------
@@ -15,8 +16,10 @@ const SummaryHome = () => {
   // -----------------------------------
   const [totalSales, setTotalSales] = useState(2420);
   const [totalOrders, setTotalOrders] = useState(500);
-  const [activeProducts, setActiveProducts] = useState(0);
   const [visitorsToday, setVisitorsToday] = useState(0);
+
+  const { products } = useProducts();
+  const activeProducts = products.filter((p) => p.status === "Active").length;
 
   // Percentage changes (mocked)
   const [salesChange, setSalesChange] = useState(40);
@@ -45,7 +48,7 @@ const SummaryHome = () => {
   // -----------------------------------
   // Additional onboarding cards
   // -----------------------------------
-  const [productAdded, setProductAdded] = useState(false);
+  // const [productAdded, setProductAdded] = useState(false);
   const [paymentsSetup, setPaymentsSetup] = useState(false);
   const [domainAdded, setDomainAdded] = useState(false);
 
@@ -216,27 +219,29 @@ const SummaryHome = () => {
       ======================== */}
       <div className="row g-4">
         {/* Add Product */}
-        {!productAdded && (
-          <div className="col-xl-4 col-lg-4 col-md-6">
-            <div className={style.smallCard}>
-              <h5 className={style.smallTitle}>Add your first product</h5>
-              <div className="row gap-2 mt-2 mb-2">
-                <div className="col-md-2 my-2 col-sm-6">
-                  <img src={tshirt} className="img-fluid" alt="" />
-                </div>
-                <div className="col-md-2 my-2  col-sm-6">
-                  <img src={smartdevice} className="img-fluid" alt="" />
-                </div>
-              </div>
-              <button
-                className={`btn ${style.smallBtn}`}
-                onClick={() => setProductAdded(true)}
-              >
-                Add Product
-              </button>
-            </div>
-          </div>
-        )}
+{/* Add Product */}
+{activeProducts < 1 && (
+  <div className="col-xl-4 col-lg-4 col-md-6">
+    <div className={style.smallCard}>
+      <h5 className={style.smallTitle}>Add your first product</h5>
+      <div className="row gap-2 mt-2 mb-2">
+        <div className="col-md-2 my-2 col-sm-6">
+          <img src={tshirt} className="img-fluid" alt="" />
+        </div>
+        <div className="col-md-2 my-2  col-sm-6">
+          <img src={smartdevice} className="img-fluid" alt="" />
+        </div>
+      </div>
+      <Link
+        to={"/dashboard/add-product"}
+        className={`btn ${style.smallBtn}`}
+      >
+        Add Product
+      </Link>
+    </div>
+  </div>
+)}
+
 
         {/* Setup Payments */}
         {!paymentsSetup && (

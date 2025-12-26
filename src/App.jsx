@@ -35,6 +35,9 @@ import NotFound from "./pages/NotFound";
 import BusinessSetup from "./pages/BusinessSetup";
 import KycVerification from "./pages/KycVerification";
 import KycSuccess from "./pages/KycSuccess";
+import Products from "./pages/Products";
+import AddProduct from "./pages/AddProduct";
+// import { ProductProvider } from "./context/ProductContext";
 // import './App.css'
 
 function App() {
@@ -79,9 +82,14 @@ function App() {
 
         {/* Dashboard parent route */}
 
-        <Route path="/dashboard" element={<DashboardLayout />}>
-          <Route index element={<DashboardHome />} />
-        </Route>
+
+          <Route path="/dashboard" element={<DashboardLayout />}>
+            <Route index element={<DashboardHome />} />
+            <Route path="products" element={<Products />} />
+            <Route path="add-product" element={<AddProduct />} />
+            <Route path="products/edit-product/:id" element={<AddProduct />} />
+          </Route>
+
 
         {/* Store Setup route */}
         <Route path="store-setup/plan" element={<StoreSetup />} />

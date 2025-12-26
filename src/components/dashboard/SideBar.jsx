@@ -76,6 +76,7 @@ const SideBar = ({ collapsed, setCollapsed, isMobile }) => {
         {/* Products */}
         <li className="nav-item mb-2">
           <Link
+          to={'/dashboard/products'}
             className={`nav-link ${style["nav-link"]} d-flex justify-content-between align-items-center`}
             onClick={() => toggleDropdown("products")}
           >
@@ -105,14 +106,12 @@ const SideBar = ({ collapsed, setCollapsed, isMobile }) => {
           {!collapsed && openDropdown === "products" && (
             <ul className={`ms-4 mt-1`}>
               <li>
-                <a className={`nav-link ${style["nav-link"]}`}>Product1</a>
+                <Link to={'/dashboard/add-product'} className={`nav-link ${style["nav-link"]}`}>Add Product</Link>
               </li>
               <li>
-                <a className={`nav-link ${style["nav-link"]}`}>Product2</a>
+                <Link to={'/dashboard/products'} className={`nav-link ${style["nav-link"]}`}>All Products</Link>
               </li>
-              <li>
-                <a className={`nav-link ${style["nav-link"]}`}>Product3</a>
-              </li>
+
             </ul>
           )}
         </li>
