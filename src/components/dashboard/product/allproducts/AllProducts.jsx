@@ -199,7 +199,7 @@ const AllProducts = () => {
       </div>
 
       {/* TABLE */}
-      <div className="table-responsive">
+      <div className="table-responsive  overflow-visible">
         <table className="table align-middle table-striped">
           <thead className={style.tableHead}>
             <tr>
@@ -230,21 +230,35 @@ const AllProducts = () => {
                 <td>{p.category}</td>
                 <td>{p.stock} Units</td>
                 <td>{p.dateAdded}</td>
-                <td className="dropdown">
-                  <button className="btn btn-sm" data-bs-toggle="dropdown">
-                    <MoreVertical size={18} />
-                    <ul className="dropdown-menu dropdown-menu-end">
-                      <li className="dropdown-item">View</li>
-                      <li className="dropdown-item">Edit</li>
-                      <li
-                        className="dropdown-item text-danger"
-                        onClick={() => deleteProduct(p.id)}
-                      >
-                        Delete
-                      </li>
-                    </ul>
-                  </button>
-                </td>
+                <td>
+  <div className="dropdown">
+    <button
+      className="btn btn-sm"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      <MoreVertical size={18} />
+    </button>
+
+    <ul className="dropdown-menu dropdown-menu-end">
+      <li>
+        <button className="dropdown-item">View</button>
+      </li>
+      <li>
+        <button className="dropdown-item">Edit</button>
+      </li>
+      <li>
+        <button
+          className="dropdown-item text-danger"
+          onClick={() => deleteProduct(p.id)}
+        >
+          Delete
+        </button>
+      </li>
+    </ul>
+  </div>
+</td>
+
               </tr>
             ))}
           </tbody>
