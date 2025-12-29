@@ -233,17 +233,17 @@ const AllProducts = () => {
                 <td className="dropdown">
                   <button className="btn btn-sm" data-bs-toggle="dropdown">
                     <MoreVertical size={18} />
+                    <ul className="dropdown-menu dropdown-menu-end">
+                      <li className="dropdown-item">View</li>
+                      <li className="dropdown-item">Edit</li>
+                      <li
+                        className="dropdown-item text-danger"
+                        onClick={() => deleteProduct(p.id)}
+                      >
+                        Delete
+                      </li>
+                    </ul>
                   </button>
-                  <ul className="dropdown-menu dropdown-menu-end">
-                    <li className="dropdown-item">View</li>
-                    <li className="dropdown-item">Edit</li>
-                    <li
-                      className="dropdown-item text-danger"
-                      onClick={() => deleteProduct(p.id)}
-                    >
-                      Delete
-                    </li>
-                  </ul>
                 </td>
               </tr>
             ))}
