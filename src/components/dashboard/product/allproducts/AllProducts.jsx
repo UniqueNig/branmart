@@ -19,13 +19,15 @@ const CATEGORIES = [
 ];
 
 const STATUSES = ["Active", "Out of Stock", "Draft"];
+// const status = p.stock === 0 ? "Out of Stock" : p.status;
 
 const AllProducts = () => {
   let navigate = useNavigate();
   //   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("");
-  const [status, setStatus] = useState("");
+  const [statusFilter, setStatusFilter] = useState("");
+
   const [sortBy, setSortBy] = useState("");
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -33,7 +35,7 @@ const AllProducts = () => {
 
   useEffect(() => {
     setCurrentPage(1);
-  }, [search, category, status, sortBy]);
+  }, [search, category, statusFilter, sortBy]);
 
   const { products, deleteProduct } = useProducts();
 
@@ -43,7 +45,8 @@ const AllProducts = () => {
   const filteredProducts = products
     .filter((p) => p.name.toLowerCase().includes(search.toLowerCase()))
     .filter((p) => (category ? p.category === category : true))
-    .filter((p) => (status ? p.status === status : true))
+    .filter((p) => (statusFilter ? p.status === statusFilter : true))
+
     .sort((a, b) => {
       if (sortBy === "name") return a.name.localeCompare(b.name);
       if (sortBy === "price") return a.price - b.price;
@@ -172,9 +175,9 @@ const AllProducts = () => {
 
         <select
           className="form-select"
-          onChange={(e) => setStatus(e.target.value)}
+          onChange={(e) => setStatusFilter(e.target.value)}
         >
-          <option value="">Status</option>
+          <option value="">All Status</option>
           {STATUSES.map((s) => (
             <option key={s}>{s}</option>
           ))}
@@ -214,54 +217,67 @@ const AllProducts = () => {
           </thead>
 
           <tbody>
-            {paginatedProducts.map((p) => (
-              <tr key={p.id}>
-                <td>{p.name}</td>
-                <td>
-                  <span
-                    className={`${style.badge} ${
-                      style[p.status.replace(" ", "")]
-                    }`}
-                  >
-                    {p.status}
-                  </span>
-                </td>
-                <td>₦{p.price.toLocaleString()}</td>
-                <td>{p.category}</td>
-                <td>{p.stock} Units</td>
-                <td>{p.dateAdded}</td>
-<td>
- <div className="dropdown dropstart drop-md-end">
-    <button
-      className="btn btn-sm"
-      data-bs-toggle="dropdown"
-      data-bs-display="static"
-      aria-expanded="false"
-    >
-      <MoreVertical size={18} />
-    </button>
+            {paginatedProducts.map((p) => {
+              const computedStatus =
+                p.status === "Draft"
+                  ? "Draft"
+                  : p.stock === 0
+                  ? "Out of Stock"
+                  : "Active";
+              return (
+                <tr key={p.id}>
+                  <td>{p.name}</td>
+                  <td>
+                    <span
+                      className={`${style.badge} ${
+                        style[computedStatus.replace(" ", "")]
+                      }`}
+                    >
+                      {computedStatus}
+                    </span>
+                  </td>
+                  <td>₦{p.price.toLocaleString()}</td>
+                  <td>{p.category}</td>
+                  <td>{p.stock} Units</td>
+                  <td>{p.dateAdded}</td>
+                  <td>
+                    <div className="dropdown dropstart drop-md-end">
+                      <button
+                        className="btn btn-sm"
+                        data-bs-toggle="dropdown"
+                        data-bs-display="static"
+                        aria-expanded="false"
+                      >
+                        <MoreVertical size={18} />
+                      </button>
 
-    <ul className="dropdown-menu">
-      <li>
-        <button className="dropdown-item">View</button>
-      </li>
-      <li>
-        <button className="dropdown-item">Edit</button>
-      </li>
-      <li>
-        <button
-          className="dropdown-item text-danger"
-          onClick={() => deleteProduct(p.id)}
-        >
-          Delete
-        </button>
-      </li>
-    </ul>
-  </div>
-</td>
+                      <ul className="dropdown-menu">
+                        <li>
+                          <button className="dropdown-item">View</button>
+                        </li>
+<li>
+  <button
+    className="dropdown-item"
+    onClick={() => navigate(`/dashboard/products/edit-product/${p.id}`)}
+  >
+    Edit
+  </button>
+</li>
 
-              </tr>
-            ))}
+                        <li>
+                          <button
+                            className="dropdown-item text-danger"
+                            onClick={() => deleteProduct(p.id)}
+                          >
+                            Delete
+                          </button>
+                        </li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
 

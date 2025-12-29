@@ -1,11 +1,13 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import style from "./addproduct.module.css";
 import { ArrowLeft, Camera } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useProducts } from "../../../../context/ProductContext";
 
 const AddProd = () => {
   const navigate = useNavigate();
+  const { id } = useParams(); // Get the product id from the URL
+  const { products, addProduct, updateProduct } = useProducts();
 
   const [form, setForm] = useState({
     name: "",
@@ -18,22 +20,49 @@ const AddProd = () => {
     return Number(stock) >= 1 ? "Active" : "Out of Stock";
   };
 
-  const { addProduct } = useProducts();
+ const isEdit = Boolean(id); // true if editing
 
-  const handleCreateProduct = () => {
-    const status = getProductStatus(form.stock);
+  // Load existing product if editing
+  useEffect(() => {
+    if (isEdit) {
+      const productToEdit = products.find((p) => p.id === id);
+      if (productToEdit) {
+        setForm({
+          name: productToEdit.name,
+          price: productToEdit.price,
+          category: productToEdit.category,
+          stock: productToEdit.stock,
+          // load other fields
+        });
+      }
+    }
+  }, [id, isEdit, products]);
 
-    const newProduct = {
-      id: crypto.randomUUID(),
-      name: form.name,
-      price: Number(form.price),
-      category: form.category,
-      stock: Number(form.stock || 0),
-      status,
-      dateAdded: new Date().toISOString().split("T")[0],
-    };
+   const handleSave = () => {
+     const status = getProductStatus(form.stock); // compute status dynamically
+    if (isEdit) {
+      const updatedProduct = {
+        ...products.find((p) => p.id === id),
+        ...form,
+        price: Number(form.price),
+        stock: Number(form.stock || 0),
+        status, // update status based on new stock
+        dateAdded: new Date().toISOString().split("T")[0], // optional, can keep original
+      };
+      updateProduct(updatedProduct);
+    } else {
+      const newProduct = {
+        id: crypto.randomUUID(),
+        ...form,
+        price: Number(form.price),
+        stock: Number(form.stock || 0),
+        // status: Number(form.stock) > 0 ? "Active" : "Out of Stock",
+         status, // compute status for new product
+        dateAdded: new Date().toISOString().split("T")[0],
+      };
+      addProduct(newProduct);
+    }
 
-    addProduct(newProduct);
     navigate("/dashboard/products");
   };
 
@@ -419,9 +448,11 @@ const AddProd = () => {
           Save as draft
         </button>
 
-        
-        <button className={`btn ${style.create}`} onClick={handleCreateProduct}>
+        {/* <button className={`btn ${style.create}`} onClick={handleCreateProduct}>
           Create product
+        </button> */}
+        <button className={`btn ${style.create}`} onClick={handleSave}>
+          {isEdit ? "Update Product" : "Create Product"}
         </button>
       </div>
     </div>
