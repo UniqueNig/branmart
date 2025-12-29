@@ -34,6 +34,26 @@
 /* =========================
    ADD BUTTON
 ========================= */
+.addBtn2 {
+  background: #CC3602;
+  color: #ffffff;
+  border: #CC3602 1px solid;
+  border-radius: 100px;
+  padding: 10px 16px;
+  font-weight: 600;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -2%;
+}
+
+.addBtn2:hover{
+      background: #CC3602;
+  color: #ffffff;
+  border: #CC3602 1px solid;
+  opacity: 0.7;
+}
+
 .addBtn {
   background: white;
   color: #414651;

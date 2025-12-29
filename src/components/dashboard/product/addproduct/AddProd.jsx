@@ -14,13 +14,18 @@ const AddProd = () => {
     price: "",
     category: "",
     stock: "",
+    description: "",
+    sku: "",
+    barcode: "",
+    images: [], // all uploaded images
+    thumbnail: "", // first image
   });
 
   const getProductStatus = (stock) => {
     return Number(stock) >= 1 ? "Active" : "Out of Stock";
   };
 
- const isEdit = Boolean(id); // true if editing
+  const isEdit = Boolean(id); // true if editing
 
   // Load existing product if editing
   useEffect(() => {
@@ -32,14 +37,17 @@ const AddProd = () => {
           price: productToEdit.price,
           category: productToEdit.category,
           stock: productToEdit.stock,
+          description: productToEdit.description,
+          sku: productToEdit.sku,
+          barcode: productToEdit.barcode,
           // load other fields
         });
       }
     }
   }, [id, isEdit, products]);
 
-   const handleSave = () => {
-     const status = getProductStatus(form.stock); // compute status dynamically
+  const handleSave = () => {
+    const status = getProductStatus(form.stock); // compute status dynamically
     if (isEdit) {
       const updatedProduct = {
         ...products.find((p) => p.id === id),
@@ -56,8 +64,7 @@ const AddProd = () => {
         ...form,
         price: Number(form.price),
         stock: Number(form.stock || 0),
-        // status: Number(form.stock) > 0 ? "Active" : "Out of Stock",
-         status, // compute status for new product
+        status, // compute status for new product
         dateAdded: new Date().toISOString().split("T")[0],
       };
       addProduct(newProduct);
@@ -88,6 +95,14 @@ const AddProd = () => {
           };
         }
       });
+
+      // also update form state
+      setForm((prevForm) => ({
+        ...prevForm,
+        images: updated.map((img) => img.file || img), // save file objects
+        thumbnail: updated[0] ? updated[0].preview : "", // first image as thumbnail
+      }));
+
       return updated.slice(0, MAX_IMAGES);
     });
   };
@@ -133,6 +148,11 @@ const AddProd = () => {
                   rows="4"
                   className="form-control"
                   placeholder="Enter product description"
+                  defaultValue='Enter product description'
+                  value={form.description}
+                  onChange={(e) =>
+                    setForm({ ...form, description: e.target.value })
+                  }
                 />
                 <button className={`btn ${style.aiBtn}`}>
                   Generate with AI
@@ -195,7 +215,12 @@ const AddProd = () => {
               <div className="row g-3">
                 <div className="col-md-6">
                   <label className="form-label">SKU</label>
-                  <input className="form-control" placeholder="Enter SKU" />
+                  <input
+                    className="form-control"
+                    value={form.sku}
+                    onChange={(e) => setForm({ ...form, sku: e.target.value })}
+                    placeholder="Enter SKU"
+                  />
                 </div>
                 <div className="col-md-6">
                   <label className="form-label">Stock Quantity</label>
@@ -214,7 +239,14 @@ const AddProd = () => {
                 </div>
                 <div className="col-md-6">
                   <label className="form-label">Bar Code</label>
-                  <input className="form-control" placeholder="Enter barcode" />
+                  <input
+                    className="form-control"
+                    value={form.barcode}
+                    onChange={(e) =>
+                      setForm({ ...form, barcode: e.target.value })
+                    }
+                    placeholder="Enter barcode"
+                  />
                 </div>
               </div>
             </div>
@@ -333,10 +365,11 @@ const AddProd = () => {
                 <div className="col-md-6">
                   <label className="form-label">Base Price</label>
                   <div className="input-group">
-                    <span className="input-group-text">$</span>
+                    <span className="input-group-text">₦</span>
                     <input
                       className="form-control"
                       defaultValue="0.00"
+                      placeholder="0.00"
                       value={form.price}
                       onChange={(e) =>
                         setForm({ ...form, price: e.target.value })
@@ -348,8 +381,12 @@ const AddProd = () => {
                 <div className="col-md-6">
                   <label className="form-label">Compare at price</label>
                   <div className="input-group">
-                    <span className="input-group-text">$</span>
-                    <input className="form-control" defaultValue="0.00" />
+                    <span className="input-group-text">₦</span>
+                    <input
+                      className="form-control"
+                      placeholder="0.00"
+                      defaultValue="0.00"
+                    />
                   </div>
                 </div>
               </div>

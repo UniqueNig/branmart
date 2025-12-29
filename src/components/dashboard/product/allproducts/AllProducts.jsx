@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import style from "./allproducts.module.css";
-import { MoreVertical, PlusIcon } from "lucide-react";
+import { MoreVertical, PlusIcon, Search } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useProducts } from "../../../../context/ProductContext";
 
@@ -152,53 +152,69 @@ const AllProducts = () => {
       </div>
 
       {/* FILTER BAR */}
-      <div className="d-flex gap-2 mb-3">
-        <input
-          className="form-control"
-          placeholder="Search"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
+      <div className="row g-2 mb-3 align-items-end">
+        <div className="col-md">
+          <div className="input-group">
+            <span className="input-group-text bg-white">
+              <Search size={18} />
+            </span>
 
-        <select
-          className="form-select"
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-        >
-          <option value="">All Categories</option>
-          {CATEGORIES.map((c) => (
-            <option key={c} value={c}>
-              {c}
-            </option>
-          ))}
-        </select>
+            <input
+              className="form-control"
+              placeholder="Search"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </div>
+        </div>
 
-        <select
-          className="form-select"
-          onChange={(e) => setStatusFilter(e.target.value)}
-        >
-          <option value="">All Status</option>
-          {STATUSES.map((s) => (
-            <option key={s}>{s}</option>
-          ))}
-        </select>
+        <div className="col-md">
+          <select
+            className="form-select"
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+          >
+            <option value="">All Categories</option>
+            {CATEGORIES.map((c) => (
+              <option key={c} value={c}>
+                {c}
+              </option>
+            ))}
+          </select>
+        </div>
 
-        <select
-          className="form-select"
-          onChange={(e) => setSortBy(e.target.value)}
-        >
-          <option value="">Sort by</option>
-          <option value="name">Name</option>
-          <option value="price">Price</option>
-          <option value="date">Date</option>
-        </select>
+        <div className="col-md">
+          <select
+            className="form-select"
+            onChange={(e) => setStatusFilter(e.target.value)}
+          >
+            <option value="">All Status</option>
+            {STATUSES.map((s) => (
+              <option key={s}>{s}</option>
+            ))}
+          </select>
+        </div>
 
-        <button
-          className={`btn ${style.addBtn}`}
-          onClick={() => navigate("/dashboard/add-product")}
-        >
-          + Add product
-        </button>
+        <div className="col-md">
+          <select
+            className="form-select"
+            onChange={(e) => setSortBy(e.target.value)}
+          >
+            <option value="">Sort by</option>
+            <option value="name">Name</option>
+            <option value="price">Price</option>
+            <option value="date">Date</option>
+          </select>
+        </div>
+
+        <div className="col-md-auto">
+          <button
+            className={`btn ${style.addBtn2} w-100`}
+            onClick={() => navigate("/dashboard/add-product")}
+          >
+            + Add product
+          </button>
+        </div>
       </div>
 
       {/* TABLE */}
@@ -226,7 +242,22 @@ const AllProducts = () => {
                   : "Active";
               return (
                 <tr key={p.id}>
-                  <td>{p.name}</td>
+                  <td>
+                    {p.thumbnail && (
+                      <img
+                        src={p.thumbnail}
+                        alt={p.name}
+                        style={{
+                          width: "40px",
+                          height: "40px",
+                          objectFit: "cover",
+                          marginRight: "8px",
+                          borderRadius: "4px",
+                        }}
+                      />
+                    )}
+                    {p.name}
+                  </td>
                   <td>
                     <span
                       className={`${style.badge} ${
@@ -255,14 +286,18 @@ const AllProducts = () => {
                         <li>
                           <button className="dropdown-item">View</button>
                         </li>
-<li>
-  <button
-    className="dropdown-item"
-    onClick={() => navigate(`/dashboard/products/edit-product/${p.id}`)}
-  >
-    Edit
-  </button>
-</li>
+                        <li>
+                          <button
+                            className="dropdown-item"
+                            onClick={() =>
+                              navigate(
+                                `/dashboard/products/edit-product/${p.id}`
+                              )
+                            }
+                          >
+                            Edit
+                          </button>
+                        </li>
 
                         <li>
                           <button
