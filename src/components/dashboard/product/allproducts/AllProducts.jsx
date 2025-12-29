@@ -231,33 +231,35 @@ const AllProducts = () => {
                 <td>{p.stock} Units</td>
                 <td>{p.dateAdded}</td>
                 <td>
-                  <div className="dropdown">
-                    <button
-                      className="btn btn-sm"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      <MoreVertical size={18} />
+  <div className="dropdown dropstart">
+    <button
+      className="btn btn-sm"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+  data-bs-display="static"
+    >
+      <MoreVertical size={18} />
+    </button>
 
-                      <ul className="dropdown-menu dropdown-menu-end">
-                        <li>
-                          <button className="dropdown-item">View</button>
-                        </li>
-                        <li>
-                          <button className="dropdown-item">Edit</button>
-                        </li>
-                        <li>
-                          <button
-                            className="dropdown-item text-danger"
-                            onClick={() => deleteProduct(p.id)}
-                          >
-                            Delete
-                          </button>
-                        </li>
-                      </ul>
-                    </button>
-                  </div>
-                </td>
+    <ul className="dropdown-menu dropdown-menu-end">
+      <li>
+        <button className="dropdown-item">View</button>
+      </li>
+      <li>
+        <button className="dropdown-item">Edit</button>
+      </li>
+      <li>
+        <button
+          className="dropdown-item text-danger"
+          onClick={() => deleteProduct(p.id)}
+        >
+          Delete
+        </button>
+      </li>
+    </ul>
+  </div>
+</td>
+
               </tr>
             ))}
           </tbody>
