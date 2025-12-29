@@ -199,7 +199,7 @@ const AllProducts = () => {
       </div>
 
       {/* TABLE */}
-      <div className="table-responsive  overflow-visible">
+      <div className="table-responsive ">
         <table className="table align-middle table-striped">
           <thead className={style.tableHead}>
             <tr>
@@ -230,18 +230,18 @@ const AllProducts = () => {
                 <td>{p.category}</td>
                 <td>{p.stock} Units</td>
                 <td>{p.dateAdded}</td>
-                <td>
-  <div className="dropdown dropstart">
+<td>
+ <div className="dropdown dropstart drop-md-end">
     <button
       className="btn btn-sm"
       data-bs-toggle="dropdown"
+      data-bs-display="static"
       aria-expanded="false"
-  data-bs-display="static"
     >
       <MoreVertical size={18} />
     </button>
 
-    <ul className="dropdown-menu dropdown-menu-end">
+    <ul className="dropdown-menu">
       <li>
         <button className="dropdown-item">View</button>
       </li>
