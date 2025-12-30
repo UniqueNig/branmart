@@ -35,9 +35,9 @@
    ADD BUTTON
 ========================= */
 .addBtn2 {
-  background: #CC3602;
+  background: #cc3602;
   color: #ffffff;
-  border: #CC3602 1px solid;
+  border: #cc3602 1px solid;
   border-radius: 100px;
   padding: 10px 16px;
   font-weight: 600;
@@ -47,10 +47,10 @@
   letter-spacing: -2%;
 }
 
-.addBtn2:hover{
-      background: #CC3602;
+.addBtn2:hover {
+  background: #cc3602;
   color: #ffffff;
-  border: #CC3602 1px solid;
+  border: #cc3602 1px solid;
   opacity: 0.7;
 }
 
@@ -69,12 +69,12 @@
 
 .addBtn:hover {
   background: #b7b2b2;
-   color: #414651;
+  color: #414651;
 }
 
-.statuspara{
-color: #535862;
-      font-weight: 400;
+.statuspara {
+  color: #535862;
+  font-weight: 400;
   font-family: "Bricolage Grotesque", sans-serif;
   font-size: 14px;
   line-height: 20px;
@@ -199,6 +199,49 @@ input.form-control::placeholder {
 .btn-warning {
   background: #d92d20;
   border-color: #d92d20;
+}
+
+.btnPrevious {
+  font-weight: 600;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -2%;
+  background: #ffffff;
+  border: #d5d7da 1px solid;
+  color: #414651;
+}
+
+.btnPrevious:hover {
+  background-color: #414651;
+  color: #ffffff;
+}
+
+.activeNum {
+  font-weight: 500;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -2%;
+  background-color: #ffecd3;
+  color: #cc3602;
+}
+.activeNum:hover {
+  background-color: #ffecd3;
+  color: #cc3602;
+  opacity: 0.6;
+}
+.inactiveNum {
+  font-weight: 500;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -2%;
+}
+.inactiveNum:hover{
+      background: #ffffff;
+  border: #d5d7da 1px solid;
+  color: #414651;
 }
 
 .productLabel {

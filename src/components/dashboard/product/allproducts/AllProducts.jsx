@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import style from "./allproducts.module.css";
-import { MoreVertical, PlusIcon, Search } from "lucide-react";
+import { ArrowLeft, ArrowRight, MoreVertical, PlusIcon, Search } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useProducts } from "../../../../context/ProductContext";
 
@@ -320,10 +320,11 @@ const AllProducts = () => {
         {totalPages > 1 && (
           <div className="d-flex justify-content-between align-items-center mt-3">
             <button
-              className="btn btn-outline-secondary btn-sm"
+              className={` ${style.btnPrevious} btn `}
               disabled={currentPage === 1}
               onClick={() => setCurrentPage((p) => p - 1)}
             >
+                <ArrowLeft size={18}/>
               Previous
             </button>
 
@@ -334,8 +335,8 @@ const AllProducts = () => {
                     key={page}
                     className={`btn btn-sm ${
                       currentPage === page
-                        ? "btn-warning"
-                        : "btn-outline-secondary"
+                        ? style.activeNum
+                        : style.inactiveNum
                     }`}
                     onClick={() => setCurrentPage(page)}
                   >
@@ -346,11 +347,12 @@ const AllProducts = () => {
             </div>
 
             <button
-              className="btn btn-outline-secondary btn-sm"
+              className={` ${style.btnPrevious} btn `}
               disabled={currentPage === totalPages}
               onClick={() => setCurrentPage((p) => p + 1)}
             >
               Next
+              <ArrowRight size={18}/>
             </button>
           </div>
         )}

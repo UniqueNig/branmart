@@ -19,6 +19,7 @@ const AddProd = () => {
     barcode: "",
     images: [], // all uploaded images
     thumbnail: "", // first image
+    dateAdded: new Date().toISOString().split("T")[0],
   });
 
   const getProductStatus = (stock) => {
@@ -40,6 +41,9 @@ const AddProd = () => {
           description: productToEdit.description,
           sku: productToEdit.sku,
           barcode: productToEdit.barcode,
+          images: productToEdit.images,
+          thumbnail: productToEdit.thumbnail,
+          dateAdded: productToEdit.dateAdded,
           // load other fields
         });
       }
@@ -55,7 +59,8 @@ const AddProd = () => {
         price: Number(form.price),
         stock: Number(form.stock || 0),
         status, // update status based on new stock
-        dateAdded: new Date().toISOString().split("T")[0], // optional, can keep original
+        dateAdded: form.dateAdded,
+        // dateAdded: new Date().toISOString().split("T")[0], // optional, can keep original
       };
       updateProduct(updatedProduct);
     } else {
@@ -65,7 +70,8 @@ const AddProd = () => {
         price: Number(form.price),
         stock: Number(form.stock || 0),
         status, // compute status for new product
-        dateAdded: new Date().toISOString().split("T")[0],
+        dateAdded: form.dateAdded,
+        // dateAdded: new Date().toISOString().split("T")[0],
       };
       addProduct(newProduct);
     }
@@ -148,7 +154,7 @@ const AddProd = () => {
                   rows="4"
                   className="form-control"
                   placeholder="Enter product description"
-                  defaultValue='Enter product description'
+                  defaultValue="Enter product description"
                   value={form.description}
                   onChange={(e) =>
                     setForm({ ...form, description: e.target.value })
@@ -439,7 +445,14 @@ const AddProd = () => {
               </div>
 
               <label className="form-label">Publish Date</label>
-              <input className="form-control" type="date" />
+              <input
+                className="form-control"
+                value={form.dateAdded}
+                onChange={(e) =>
+                  setForm({ ...form, dateAdded: e.target.value })
+                }
+                type="date"
+              />
             </div>
           </div>
 
