@@ -13,6 +13,9 @@ const AddProd = () => {
     name: "",
     price: "",
     category: "",
+    subcategory: "",
+    tag: "",
+    tags: [],
     stock: "",
     description: "",
     sku: "",
@@ -30,24 +33,20 @@ const AddProd = () => {
 
   // Load existing product if editing
   useEffect(() => {
-    if (isEdit) {
-      const productToEdit = products.find((p) => p.id === id);
-      if (productToEdit) {
-        setForm({
-          name: productToEdit.name,
-          price: productToEdit.price,
-          category: productToEdit.category,
-          stock: productToEdit.stock,
-          description: productToEdit.description,
-          sku: productToEdit.sku,
-          barcode: productToEdit.barcode,
-          images: productToEdit.images,
-          thumbnail: productToEdit.thumbnail,
-          dateAdded: productToEdit.dateAdded,
-          // load other fields
-        });
-      }
-    }
+    if (!isEdit) return;
+
+    const productToEdit = products.find((p) => String(p.id) === String(id));
+
+    if (!productToEdit) return;
+
+    setForm((prev) => ({
+      ...prev, // keep defaults
+      ...productToEdit,
+      subcategories: productToEdit.subcategories || [],
+      tags: productToEdit.tags || [],
+      images: productToEdit.images || [],
+      thumbnail: productToEdit.thumbnail || productToEdit.images?.[0] || "",
+    }));
   }, [id, isEdit, products]);
 
   const handleSave = () => {
@@ -84,6 +83,24 @@ const AddProd = () => {
   const inputRef = useRef(null);
   const thumbRefs = useRef([]);
   const [images, setImages] = useState([]);
+  const [variants, setVariants] = useState([]);
+  const [showVariantModal, setShowVariantModal] = useState(false);
+
+  const updateVariant = (id, field, value) => {
+    setVariants((prev) =>
+      prev.map((v) => (v.id === id ? { ...v, [field]: value } : v))
+    );
+  };
+
+  const toggleVariantStatus = (id) => {
+    setVariants((prev) =>
+      prev.map((v) => (v.id === id ? { ...v, active: !v.active } : v))
+    );
+  };
+
+  const removeVariant = (id) => {
+    setVariants((prev) => prev.filter((v) => v.id !== id));
+  };
 
   const handleFiles = (files, index = 0) => {
     const validFiles = Array.from(files)
@@ -191,17 +208,72 @@ const AddProd = () => {
 
               <div className="mb-3">
                 <label className="form-label">Sub Category</label>
-                {/* <select className="form-select">
-                  <option>Select sub category</option>
-                </select> */}
-                <input type="text" className="form-control" />
+
+                <select
+                  className="form-select"
+                  value={form.subcategory}
+                  onChange={(e) =>
+                    setForm({ ...form, subcategory: e.target.value })
+                  }
+                >
+                  <option value="">Select Sub Category</option>
+                  <option value="Fashion">Fashion</option>
+                  <option value="Food">Food</option>
+                  <option value="Appliance">Appliance</option>
+                  <option value="Electronics">Electronics</option>
+                  <option value="Beauty">Beauty</option>
+                  <option value="Health">Health</option>
+                  <option value="Home">Home</option>
+                  <option value="Phones">Phones</option>
+                  <option value="Computing">Computing</option>
+                  <option value="Gaming">Gaming</option>
+                  <option value="Baby Products">Baby Products</option>
+                </select>
               </div>
 
               <div className="mb-3">
                 <label className="form-label">Tags</label>
-                <select className="form-select">
-                  <option>Select product tags</option>
-                </select>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Type and press Enter"
+                  value={form.tag}
+                  onChange={(e) => setForm({ ...form, tag: e.target.value })}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && form.tag.trim()) {
+                      e.preventDefault();
+
+                      if (!form.tags.includes(form.tag.trim())) {
+                        setForm({
+                          ...form,
+                          tags: [...form.tags, form.tag.trim()],
+                          tag: "",
+                        });
+                      }
+                    }
+                  }}
+                />
+                {/* Preview */}
+                <div className="d-flex gap-2 flex-wrap mt-2">
+                  {form.tags.map((item, i) => (
+                    <span
+                      key={i}
+                      className="badge bg-light text-dark border d-flex align-items-center gap-1"
+                    >
+                      {item}
+                      <button
+                        type="button"
+                        className="btn-close btn-close-sm"
+                        onClick={() =>
+                          setForm({
+                            ...form,
+                            tags: form.tags.filter((_, index) => index !== i),
+                          })
+                        }
+                      />
+                    </span>
+                  ))}
+                </div>
               </div>
 
               <div>
@@ -262,9 +334,206 @@ const AddProd = () => {
           <div className={`card ${style.card}`}>
             <div className="card-body d-flex justify-content-between align-items-center">
               <h6 className="mb-0">Variants</h6>
-              <button className={`btn ${style.linkBtn}`}>+ Add Variant</button>
+
+              {variants.length === 0 && (
+                <button
+                  className={`btn ${style.linkBtn}`}
+                  onClick={() => setShowVariantModal(true)}
+                >
+                  + Add Variant
+                </button>
+              )}
             </div>
+
+            {/* Variant Table (shown only if variants exist) */}
+            {variants.length > 0 && (
+              <div className="table-responsive mt-3">
+                <div className="row d-flex justify-content-between mx-auto">
+                  <div className="col-md-6">
+                    <p>Product Variants</p>
+                  </div>
+                  <div className="col-md-4">
+                    <button
+                      className={`btn ${style.linkBtn}`}
+                      onClick={() => setShowVariantModal(true)}
+                    >
+                      + Edit Variant
+                    </button>
+                  </div>
+                </div>
+                <table className="table align-middle">
+                  <thead>
+                    <tr>
+                      <th>Image</th>
+                      <th>Variant</th>
+                      <th>Price</th>
+                      <th>Stock</th>
+                      <th>SKU</th>
+                      <th>Status</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    {variants.map((v, i) => (
+                      <tr key={v.id}>
+                        <td>
+                          <Camera size={18} className="text-muted" />
+                        </td>
+
+                        <td>{v.value}</td>
+
+                        <td>
+                          <input
+                            className="form-control"
+                            value={v.price}
+                            onChange={(e) =>
+                              updateVariant(v.id, "price", e.target.value)
+                            }
+                          />
+                        </td>
+
+                        <td>
+                          <input
+                            className="form-control"
+                            value={v.stock}
+                            onChange={(e) =>
+                              updateVariant(v.id, "stock", e.target.value)
+                            }
+                          />
+                        </td>
+
+                        <td>
+                          <input
+                            className="form-control"
+                            value={v.sku}
+                            onChange={(e) =>
+                              updateVariant(v.id, "sku", e.target.value)
+                            }
+                          />
+                        </td>
+                        {/* STATUS TOGGLE */}
+                        <td className="text-center">
+                          <div className="form-check form-switch d-flex justify-content-center">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              role="switch"
+                              checked={v.active}
+                              onChange={() => toggleVariantStatus(v.id)}
+                            />
+                          </div>
+                        </td>
+
+                        {/* DELETE */}
+                        <td className="text-end">
+                          <button
+                            className="btn btn-sm btn-outline-danger"
+                            onClick={() => removeVariant(v.id)}
+                          >
+                            🗑
+                          </button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
           </div>
+
+          {showVariantModal && (
+            <div className="modal fade show d-block" tabIndex="-1">
+              <div className="modal-dialog modal-lg modal-dialog-centered">
+                <div className="modal-content">
+                  {/* Header */}
+                  <div className="modal-header">
+                    <h5 className="modal-title">Add Product Variants</h5>
+                    <button
+                      className="btn-close"
+                      onClick={() => setShowVariantModal(false)}
+                    />
+                  </div>
+
+                  {/* Body */}
+                  <div className="modal-body">
+                    {/* Product Info */}
+                    <div className="mb-4">
+                      {/* Product Name */}
+                      <div className="row mx-auto mb-2">
+                        <div className="col">
+                          <h5>Product Details</h5>
+                          <p className="mb-0 fw-semibold">{form.name}</p>
+                        </div>
+                      </div>
+
+                      {/* Meta Info */}
+                      <div className="row border rounded-3 p-3 gx-4">
+                        <div className="col">
+                          <small className="text-muted">Category</small>
+                          <div className="fw-medium">{form.category}</div>
+                        </div>
+
+                        <div className="col">
+                          <small className="text-muted">Sub Category</small>
+                          <div className="fw-medium">{form.subcategory}</div>
+                        </div>
+
+                        <div className="col">
+                          <small className="text-muted">Created on</small>
+                          <div className="fw-medium">{form.dateAdded}</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <VariantCreator
+                      onSave={(values) => {
+                        const formatted = values.map((v) => ({
+                          id: crypto.randomUUID(),
+                          type: v.type,
+                          value: v.value,
+                          price: "",
+                          stock: "",
+                          sku: "",
+                          active: true,
+                        }));
+
+                        setVariants((prev) => {
+                          const existing = new Set(
+                            prev.map((v) => `${v.type}-${v.value}`)
+                          );
+
+                          const unique = formatted.filter(
+                            (v) => !existing.has(`${v.type}-${v.value}`)
+                          );
+
+                          return [...prev, ...unique];
+                        });
+
+                        setShowVariantModal(false);
+                      }}
+                    />
+                  </div>
+
+                  {/* Footer */}
+                  <div className="modal-footer">
+                    <button
+                      className={style.discard}
+                      onClick={() => setShowVariantModal(false)}
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      className={style.create}
+                      onClick={() => setShowVariantModal(false)}
+                    >
+                      Save variant
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Shipping */}
           <div className={`card ${style.card}`}>
@@ -510,3 +779,64 @@ const AddProd = () => {
 };
 
 export default AddProd;
+
+const VariantCreator = ({ onSave }) => {
+  const [type, setType] = useState("Memory");
+  const [values, setValues] = useState([]);
+  const [input, setInput] = useState("");
+
+  const addValue = () => {
+    if (!input) return;
+    setValues([...values, { type, value: input }]);
+    setInput("");
+  };
+
+  return (
+    <>
+      <div className="row g-3 mb-3">
+        <div className="col-md-4">
+          <label>Variant Type</label>
+          <select
+            className="form-select"
+            value={type}
+            onChange={(e) => setType(e.target.value)}
+          >
+            <option>Memory</option>
+            <option>Size</option>
+            <option>Color</option>
+          </select>
+        </div>
+
+        <div className="col-md-8">
+          <label>Variant Values</label>
+          <div className="d-flex gap-2">
+            <input
+              className="form-control"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              placeholder="e.g. 256 GB"
+            />
+            <button className={style.discard} onClick={addValue}>
+              Add
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Preview */}
+      <div className="d-flex gap-2 flex-wrap">
+        {values.map((v, i) => (
+          <span key={i} className="badge bg-light text-dark">
+            {v.value}
+          </span>
+        ))}
+      </div>
+
+      <div className="mt-3">
+        <button className={style.create} onClick={() => onSave(values)}>
+          Generate Variants
+        </button>
+      </div>
+    </>
+  );
+};
