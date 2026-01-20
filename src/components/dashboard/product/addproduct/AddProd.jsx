@@ -133,9 +133,9 @@ const AddProd = () => {
     <div className={`container-fluid ${style.wrapper}`}>
       {/* Header */}
       <div className="d-flex align-items-center mb-4">
-        <Link to={"/dashboard/products"} className={`btn ${style.backBtn}`}>
+        <button onClick={() => navigate(-1)} className={`btn ${style.backBtn}`}>
           <ArrowLeft size={22} />
-        </Link>
+        </button>
         <div className="ms-3">
           <h4 className={`mb-1 `}>Add New Product</h4>
           <p className="mb-0 text-muted">

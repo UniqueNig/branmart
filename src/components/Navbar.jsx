@@ -1,25 +1,51 @@
-import React from "react";
-import style from "./AllCss.module.css";
+import React, { useEffect, useRef } from "react";
+import style from "./navbar.module.css";
 import logo from "../assets/Vector.png";
 import nav1 from "../assets/n1.png";
 import nav2 from "../assets/n2.png";
 import nav3 from "../assets/n3.png";
 
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
+  const navbarRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navbarRef.current && !navbarRef.current.contains(event.target)) {
+        const navbarCollapse = document.getElementById("navbarScroll");
+
+        if (navbarCollapse?.classList.contains("show")) {
+          navbarCollapse.classList.remove("show");
+        }
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
+  const closeNavbar = () => {
+    const navbarCollapse = document.getElementById("navbarScroll");
+    navbarCollapse?.classList.remove("show");
+  };
+
   return (
     <>
       <header>
         <nav
-          className={`navbar navbar-expand-lg bg-body-light ${style.navbar} sticky-top`}
+          ref={navbarRef}
+          className={`navbar navbar-expand-lg bg-light ${style.navbar} sticky-top`}
         >
           <div className="container">
             {/* <!-- logo --> */}
 
-            <Link className="navbar-brand" to={"/"}>
+            <NavLink className="navbar-brand" to={"/"}>
               <img src={logo} alt="" />
-            </Link>
+            </NavLink>
 
             <button
               className="navbar-toggler"
@@ -36,43 +62,57 @@ const Navbar = () => {
             <div className="collapse navbar-collapse" id="navbarScroll">
               <ul className="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
                 <li className={`nav-item ${style["nav-item"]}`}>
-                  <Link
-                    className={`nav-link active ${style["nav-link"]}`}
-                    aria-current="page"
+                  <NavLink
+                    onClick={closeNavbar}
                     to="/features"
+                    className={({ isActive }) =>
+                      `nav-link ${style["nav-link"]} ${
+                        isActive ? "active" : ""
+                      }`
+                    }
                   >
                     Features
-                  </Link>
+                  </NavLink>
                 </li>
 
                 <li className={`nav-item ${style["nav-item"]}`}>
-                  <Link
-                    className={`nav-link ${style["nav-link"]}`}
+                  <NavLink
+                    onClick={closeNavbar}
+                    className={({ isActive }) =>
+                      `nav-link ${style["nav-link"]} ${
+                        isActive ? "active" : ""
+                      }`
+                    }
                     to="/template"
                   >
                     Templates
-                  </Link>
+                  </NavLink>
                 </li>
 
                 <li className={`nav-item ${style["nav-item"]}`}>
-                  <Link
-                    className={`nav-link ${style["nav-link"]}`}
-                    to={"/pricing"}
+                  <NavLink
+                    onClick={closeNavbar}
+                    to="/pricing"
+                    className={({ isActive }) =>
+                      `nav-link ${style["nav-link"]} ${
+                        isActive ? "active" : ""
+                      }`
+                    }
                   >
-                    Pricing{" "}
-                  </Link>
+                    Pricing
+                  </NavLink>
                 </li>
 
                 <li className={`nav-item dropdown ${style["nav-item"]}`}>
-                  <a
+                  <button
                     className={`nav-link dropdown-toggle ${style["nav-link"]}`}
-                    href="#"
-                    role="button"
+                    type="button"
                     data-bs-toggle="dropdown"
+                    data-bs-auto-close="true"
                     aria-expanded="false"
                   >
                     Resources
-                  </a>
+                  </button>
 
                   {/* MEGA MENU */}
                   <div
@@ -181,42 +221,48 @@ const Navbar = () => {
                           </div>
                         </div>
 
-                        <Link
+                        <NavLink
+                          onClick={closeNavbar}
                           className={`fw-bold d-inline-block mt-2 ${style.megaLink}`}
                           to={"/blog"}
                         >
                           {" "}
                           All blog posts →
-                        </Link>
+                        </NavLink>
                       </div>
                     </div>
                   </div>
                 </li>
 
                 <li className={`nav-item ${style["nav-item"]}`}>
-                  <Link
-                    className={`nav-link ${style["nav-link"]}`}
+                  <NavLink
+                    onClick={closeNavbar}
+                    className={({ isActive }) =>
+                      `nav-link ${style["nav-link"]} ${
+                        isActive ? "active" : ""
+                      }`
+                    }
                     to={"/about-us"}
                   >
                     About{" "}
-                  </Link>
+                  </NavLink>
                 </li>
               </ul>
 
               <div className="d-flex gap-3">
-                <Link to={"/sign-in"}>
+                <NavLink to={"/sign-in"}>
                   <button
                     className={`btn btn-light ${style.loginBtn}`}
                     type="submit"
                   >
                     Login
                   </button>
-                </Link>
-                <Link to={"/sign-up"}>
+                </NavLink>
+                <NavLink to={"/sign-up"}>
                   <button className={` ${style.registerBtn}`} type="submit">
                     Start for free
                   </button>
-                </Link>
+                </NavLink>
               </div>
             </div>
           </div>

@@ -37,6 +37,7 @@ import KycVerification from "./pages/KycVerification";
 import KycSuccess from "./pages/KycSuccess";
 import Products from "./pages/Products";
 import AddProduct from "./pages/AddProduct";
+import ViewProduct from "./pages/ViewProduct";
 // import { ProductProvider } from "./context/ProductContext";
 // import './App.css'
 
@@ -88,6 +89,7 @@ function App() {
             <Route path="products" element={<Products />} />
             <Route path="add-product" element={<AddProduct />} />
             <Route path="products/edit-product/:id" element={<AddProduct />} />
+            <Route path="products/view-product/:id" element={<ViewProduct />} />
           </Route>
 
 

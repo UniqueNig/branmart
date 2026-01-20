@@ -43,108 +43,6 @@
   --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-.navbar {
-  border: #f5f5f5 1px solid;
-  background: white !important;
-  height: 80px;
-  position: sticky !important;
-  top: 0;
-  z-index: 1030;
-}
-
-/* Also force the dropdown background on mobile */
-.navbar .dropdown-menu {
-  background: #ffffff !important;
-}
-
-.nav-item .nav-link {
-  font-family: "Bricolage Grotesque", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 24px;
-  /* paragraph-spacing: 16px; */
-  letter-spacing: -2%;
-}
-
-.nav-link {
-  color: #535862;
-}
-.nav-link:active {
-  color: var(--primary-color);
-}
-.nav-link:focus {
-  color: var(--primary-color);
-}
-
-.nav-link::after {
-  color: var(--primary-color);
-}
-
-.nav-link:hover {
-  color: var(--primary-color);
-}
-
-.megaMenu {
-  width: 750px;
-  border-radius: 12px;
-  background: #fff;
-}
-
-.megaTitle {
-  color: #cc3602; /* match screenshot orange */
-  font-family: "Bricolage Grotesque", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: -2%;
-  background-color: transparent;
-}
-
-.megaText {
-  font-family: "Bricolage Grotesque", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
-  letter-spacing: -2%;
-  background-color: transparent;
-  color: #667085;
-}
-
-.megaIcon {
-  font-size: 20px;
-  color: #d44500;
-}
-
-.megaLink {
-  color: #cc3602;
-  text-decoration: none;
-  font-family: "Bricolage Grotesque", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: -2%;
-  background-color: transparent;
-}
-
-.megaBold {
-  font-family: "Bricolage Grotesque", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: -2%;
-  background-color: transparent;
-  color: #181d27;
-}
-
-.megaLink:hover {
-  text-decoration: underline;
-}
-
 .loginBtn {
   font-family: "Bricolage Grotesque", sans-serif;
   font-optical-sizing: auto;
@@ -177,6 +75,7 @@
   background-color: var(--primary-light);
   color: #ffffff; /* Change text color on hover */
 }
+
 .heroSection {
   /* height: 620px; */
   background-color: #241717;
@@ -1902,9 +1801,9 @@ img:hover {
   color: white !important;
 }
 
-.standSection {
-  /* background, spacing, etc. (optional) */
-}
+/* .standSection {
+ 
+} */
 
 .standHeading {
   font-family: "Agdasima", sans-serif;

@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react";
 import style from "./allproducts.module.css";
-import { ArrowLeft, ArrowRight, MoreVertical, PlusIcon, Search } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  MoreVertical,
+  PlusIcon,
+  Search,
+} from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useProducts } from "../../../../context/ProductContext";
 
@@ -284,7 +290,16 @@ const AllProducts = () => {
 
                       <ul className="dropdown-menu">
                         <li>
-                          <button className="dropdown-item">View</button>
+                          <button
+                            className="dropdown-item"
+                            onClick={() =>
+                              navigate(
+                                `/dashboard/products/view-product/${p.id}`
+                              )
+                            }
+                          >
+                            View
+                          </button>
                         </li>
                         <li>
                           <button
@@ -324,7 +339,7 @@ const AllProducts = () => {
               disabled={currentPage === 1}
               onClick={() => setCurrentPage((p) => p - 1)}
             >
-                <ArrowLeft size={18}/>
+              <ArrowLeft size={18} />
               Previous
             </button>
 
@@ -334,9 +349,7 @@ const AllProducts = () => {
                   <button
                     key={page}
                     className={`btn btn-sm ${
-                      currentPage === page
-                        ? style.activeNum
-                        : style.inactiveNum
+                      currentPage === page ? style.activeNum : style.inactiveNum
                     }`}
                     onClick={() => setCurrentPage(page)}
                   >
@@ -352,7 +365,7 @@ const AllProducts = () => {
               onClick={() => setCurrentPage((p) => p + 1)}
             >
               Next
-              <ArrowRight size={18}/>
+              <ArrowRight size={18} />
             </button>
           </div>
         )}

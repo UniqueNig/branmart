@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap");
+
+:root {
+  /* Brand Colors */
+  --primary-color: #cc3602;
+  --primary-light: #e65a29;
+  --primary-dark: #992902;
+
+  /* Neutral Colors */
+  --black: #000000;
+  --white: #ffffff;
+  --gray-100: #f5f5f5;
+  --gray-200: #e0e0e0;
+  --gray-300: #c7c7c7;
+  --gray-400: #9e9e9e;
+  --gray-500: #757575;
+  --gray-600: #616161;
+  --gray-700: #424242;
+  --gray-800: #212121;
+
+  /* Text Colors */
+  --text-primary: #212121;
+  --text-secondary: #616161;
+  --text-light: #ffffff;
+
+  /* Background Colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f7f7f7;
+
+  /* Borders */
+  --border-color: #e0e0e0;
+
+  /* Fonts */
+  --font-primary: "Poppins", sans-serif;
+  --font-secondary: "Roboto", sans-serif;
+
+  /* Spacing */
+  --radius: 6px;
+  --radius-lg: 12px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* .navbar {
+  border: #f5f5f5 1px solid;
+  background: white !important;
+  height: 80px;
+  position: sticky !important;
+  top: 0;
+  z-index: 1030;
+} */
+
+body {
+  padding-top: 80px;
+}
+
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 1050;
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+
+/* Ensure dropdown is white on ALL screen sizes */
+.navbar .dropdown-menu {
+  background-color: #ffffff !important;
+  border-radius: 12px;
+}
+
+/* Mobile-specific fix */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background-color: #ffffff;
+    padding: 1rem;
+    position: absolute;
+    top: 80px; /* same as navbar height */
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: #ffffff !important;
+    z-index: 1040;
+    padding: 1rem 1.25rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  
+  .megaMenu {
+    width: 100% !important;
+  }
+
+  .dropdown-menu {
+    position: static !important;
+    float: none;
+    width: 100%;
+    box-shadow: none;
+    margin-top: 0.5rem;
+  }
+}
+
+.nav-item .nav-link {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  /* paragraph-spacing: 16px; */
+  letter-spacing: -0.02em;
+}
+
+.nav-link {
+  color: #535862;
+}
+.nav-link:active {
+    color: #cc3602;
+  /* color: var(--primary-color); */
+ 
+}
+.nav-link:focus {
+  color: var(--primary-color);
+}
+
+.nav-link::after {
+  color: var(--primary-color);
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+.megaMenu {
+  width: 750px;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.megaTitle {
+  color: #cc3602; /* match screenshot orange */
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  background-color: transparent;
+}
+
+.megaText {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  background-color: transparent;
+  color: #667085;
+}
+
+.megaIcon {
+  font-size: 20px;
+  color: #d44500;
+}
+
+.megaLink {
+  color: #cc3602;
+  text-decoration: none;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  background-color: transparent;
+}
+
+.megaBold {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  background-color: transparent;
+  color: #181d27;
+}
+
+.megaLink:hover {
+  text-decoration: underline;
+}
+
+.loginBtn {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #535862;
+  letter-spacing: -0.02em;
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 10px 18px 10px 18px;
+}
+
+.registerBtn {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+  background-color: var(--primary-color);
+  letter-spacing: -0.02em;
+  border-radius: 40px;
+  border: none;
+  padding: 10px 18px 10px 18px;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Add transition */
+}
+
+.registerBtn:hover {
+  background-color: var(--primary-light);
+  color: #ffffff; /* Change text color on hover */
+}
